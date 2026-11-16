@@ -1,0 +1,8 @@
+{
+  "package": "@redocly/openapi-core",
+  "version": "1.34.20",
+  "git_commit": "b563864727f1c7524021196d27bad4524f32e667",
+  "license_blob": "7932c885bbc55cac39db7c9ecea1c3c353059fb0",
+  "source": "https://github.com/Redocly/redocly-cli/blob/b563864727f1c7524021196d27bad4524f32e667/LICENSE.md",
+  "reason": "npm archive omits root license; taken from its declared source commit"
+}

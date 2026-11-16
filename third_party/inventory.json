@@ -1,0 +1,2216 @@
+[
+  {
+    "kind": "bundled-runtime",
+    "name": "swagger-ui-dist",
+    "version": "5.33.0",
+    "source": "https://registry.npmjs.org/swagger-ui-dist/-/swagger-ui-dist-5.33.0.tgz",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "0d20d1adef18aee3f40dd258172155521ce702ac445cb5f7b7d60ed32dad2fb2"
+      },
+      {
+        "file": "swagger-ui-bundle.js.LICENSE.txt",
+        "sha256": "63818894e4b04cd0e3180d9cb20761e227a939121e7484f8e1d528227c756f89"
+      }
+    ],
+    "integrity": "sha512-wpdK+m6BU5yj6pmUdMskZVTSWYG4DLglAx3sIhylloY37i8O37IrH+YEpqdXNfpaTGxILRBFzUqLF2jKqbfI7A==",
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/cespare/xxhash/v2",
+    "version": "v2.3.0",
+    "source": "https://pkg.go.dev/github.com/cespare/xxhash/v2@v2.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "f566a9f97bacdaf00d9f21dd991e81dc11201c4e016c86b470799429a1c9a79c"
+      }
+    ],
+    "module_sum": "h1:UL815xU9SqsFlibzuggzjXhog7bL6oX9BbNZnL2UFvs="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/coreos/go-oidc/v3",
+    "version": "v3.21.0",
+    "source": "https://pkg.go.dev/github.com/coreos/go-oidc/v3@v3.21.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "cb5e8e7e5f4a3988e1063c142c60dc2df75605f4c46515e776e3aca6df976e14"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "dccd26c6fd9c296daf44d0bc56bb4efc566edd4880381b3331c9a63e6e471338"
+      }
+    ],
+    "module_sum": "h1:wZo4Q9Pum8dYEj0eMUPrqR+kvuGkeUplbLpNCkBqoWM="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/getkin/kin-openapi",
+    "version": "v0.149.0",
+    "source": "https://pkg.go.dev/github.com/getkin/kin-openapi@v0.149.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "612a11e78c07e12765d9cf3866e3edc5f8212c541602721b14e465311afb3aa6"
+      }
+    ],
+    "module_sum": "h1:ZbhmVJ4yq5RZDUsyP8lcBcGMsjsaTqXEFt6isdtMDfA="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/go-chi/chi/v5",
+    "version": "v5.3.2",
+    "source": "https://pkg.go.dev/github.com/go-chi/chi/v5@v5.3.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a2d51b7515acfaff2f7a88688650f2fc4fd99561383e72bba2305e3db59a1647"
+      }
+    ],
+    "module_sum": "h1:5YQkICvTCSZ25hoRsyJazN0scjzKGiu4VAUc7H1o1nY="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/go-jose/go-jose/v4",
+    "version": "v4.1.4",
+    "source": "https://pkg.go.dev/github.com/go-jose/go-jose/v4@v4.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ],
+    "module_sum": "h1:moDMcTHmvE6Groj34emNPLs/qtYXRVcd6S7NHbHz3kA="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/go-openapi/jsonpointer",
+    "version": "v0.23.1",
+    "source": "https://pkg.go.dev/github.com/go-openapi/jsonpointer@v0.23.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "05b8a1ce6ce54812980d27a99019687af7e40d6ad2e1ea70c1d537d682a90188"
+      }
+    ],
+    "module_sum": "h1:1HBACs7XIwR2RcmItfdSFlALhGbe6S92p0ry4d1GWg4="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/go-openapi/swag/jsonname",
+    "version": "v0.26.0",
+    "source": "https://pkg.go.dev/github.com/go-openapi/swag/jsonname@v0.26.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ],
+    "module_sum": "h1:gV1NFX9M8avo0YSpmWogqfQISigCmpaiNci8cGECU5w="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/jackc/pgpassfile",
+    "version": "v1.0.0",
+    "source": "https://pkg.go.dev/github.com/jackc/pgpassfile@v1.0.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "adb1663fda031df8f4344aa68f299fd87d80353e31339406742ded21dae65702"
+      }
+    ],
+    "module_sum": "h1:/6Hmqy13Ss2zCq62VdNG8tM1wchn8zjSGOBJ6icpsIM="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/jackc/pgservicefile",
+    "version": "v0.0.0-20240606120523-5a60cdf6a761",
+    "source": "https://pkg.go.dev/github.com/jackc/pgservicefile@v0.0.0-20240606120523-5a60cdf6a761",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "fc505773403fe869ed64cc2235cdd13988a427bb7e3a7e7004a3f4b27420f8fc"
+      }
+    ],
+    "module_sum": "h1:iCEnooe7UlwOQYpKFhBabPMi4aNAfoODPEFNiAnClxo="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/jackc/pgx/v5",
+    "version": "v5.11.0",
+    "source": "https://pkg.go.dev/github.com/jackc/pgx/v5@v5.11.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "467f95e074fe23079a5623ed652619682692041b8551da27e3c2ddb9659a1507"
+      }
+    ],
+    "module_sum": "h1:IzBBtyK9AHqf98cctWFifYSci2hgQR/cd56wB4p+ogg="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/jackc/puddle/v2",
+    "version": "v2.2.2",
+    "source": "https://pkg.go.dev/github.com/jackc/puddle/v2@v2.2.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "2d50e98a4900b4d6457a38d39c1432fdc156fc2f7b365f2e33ec9344acbb0057"
+      }
+    ],
+    "module_sum": "h1:PR8nw+E/1w0GLuRFSmiioY6UooMp6KJv0/61nB7icHo="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/mfridman/interpolate",
+    "version": "v0.0.2",
+    "source": "https://pkg.go.dev/github.com/mfridman/interpolate@v0.0.2",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "21408182c12c98d402fa38a8b678560dc63fd6bada5a0017722883e4b79e6620"
+      }
+    ],
+    "module_sum": "h1:pnuTK7MQIxxFz1Gr+rjSIx9u7qVjf5VOoM/u6BbAxPY="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/oasdiff/yaml",
+    "version": "v0.1.1",
+    "source": "https://pkg.go.dev/github.com/oasdiff/yaml@v0.1.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "24653fd8a39354396da1a265d68316399edc39b1df48c5866d55f9f06484fa9a"
+      }
+    ],
+    "module_sum": "h1:6nHx+pn9gBRM6YpBlFZFQGCCd1nuvqOBtTD3KKTgGxY="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/oasdiff/yaml3",
+    "version": "v0.0.14",
+    "source": "https://pkg.go.dev/github.com/oasdiff/yaml3@v0.0.14",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "f6c2dd3a67b576eafb89b80200b8b1627230bf3821a0c14cb99a22ac19107d00"
+      }
+    ],
+    "module_sum": "h1:aLJee3hxBK2H5wdXd9iPcIXb93Nty1Ge0pT171eHtkw="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/pressly/goose/v3",
+    "version": "v3.28.0",
+    "source": "https://pkg.go.dev/github.com/pressly/goose/v3@v3.28.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "f23985556a879c0e68bb4e136ee4b88a550d26fa33db77a65d76b721c93093ef"
+      }
+    ],
+    "module_sum": "h1:D2M+iL31GmpZxSHOhX8mqyqAT3CXnokUmm0eKoSP+Vc="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/redis/go-redis/v9",
+    "version": "v9.22.0",
+    "source": "https://pkg.go.dev/github.com/redis/go-redis/v9@v9.22.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a3a7dff87da3927db65cb4c87b1cfbc96ca2755704461a485d457be7ae300a86"
+      }
+    ],
+    "module_sum": "h1:laDvpYXTJtZLloinw1fA5Kqd6HAEH2XKxOkG/PDq2F0="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/santhosh-tekuri/jsonschema/v6",
+    "version": "v6.0.3",
+    "source": "https://pkg.go.dev/github.com/santhosh-tekuri/jsonschema/v6@v6.0.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c8858a5a76440bbca484e134cf7df46385d090dd18b2c58e650f939258802e5b"
+      }
+    ],
+    "module_sum": "h1:1EYB5IzjZawrrnELUi78f9fPu57HuXjmddZPjrls/28="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "github.com/sethvargo/go-retry",
+    "version": "v0.4.0",
+    "source": "https://pkg.go.dev/github.com/sethvargo/go-retry@v0.4.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+      }
+    ],
+    "module_sum": "h1:9qy1OoIAxBL+gBYnkTnTnWle5wlfsXQlwRzIbbpdqPw="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "go.uber.org/atomic",
+    "version": "v1.11.0",
+    "source": "https://pkg.go.dev/go.uber.org/atomic@v1.11.0",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "edbb5a4d165ac69376c765b551c0662ff42bea87e1f1eda85f42ac90c34b09d0"
+      }
+    ],
+    "module_sum": "h1:ZvwS0R+56ePWxUNi+Atn9dWONBPp/AUETXlHW0DxSjE="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "go.uber.org/multierr",
+    "version": "v1.11.0",
+    "source": "https://pkg.go.dev/go.uber.org/multierr@v1.11.0",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "dcdabe03bef2382a130640d1c3a4cd5ec42aba1035095c38272fde694eb72405"
+      }
+    ],
+    "module_sum": "h1:blXXJkSxSSfBVBlC76pxqeO+LN3aDfLQo+309xJstO0="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "golang.org/x/crypto",
+    "version": "v0.57.0",
+    "source": "https://pkg.go.dev/golang.org/x/crypto@v0.57.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:3ZVCjf8Ggz7zneR/EHRVx68Ctf+2pmIMP2UFhh9cC6M="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "golang.org/x/oauth2",
+    "version": "v0.37.0",
+    "source": "https://pkg.go.dev/golang.org/x/oauth2@v0.37.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:JUlcxA8oAtauLfiH8FX2/FkAWHAdi0QtGCGc+hofE98="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "golang.org/x/sync",
+    "version": "v0.23.0",
+    "source": "https://pkg.go.dev/golang.org/x/sync@v0.23.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:KameEIfc1IkluZyXWLn39Wd4tURc6GbCiISGiZm2bQk="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "golang.org/x/sys",
+    "version": "v0.48.0",
+    "source": "https://pkg.go.dev/golang.org/x/sys@v0.48.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:bbX/i/6MgT9BVLM9RT1thmxL04yeTAhbEz4SyadbXoo="
+  },
+  {
+    "kind": "go-runtime",
+    "name": "golang.org/x/text",
+    "version": "v0.42.0",
+    "source": "https://pkg.go.dev/golang.org/x/text@v0.42.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:JbOZXgfeCPU9gacVtYliJqOhD+zhrEqK4LfdpmlUZqI="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "github.com/dprotaso/go-yit",
+    "version": "v0.0.0-20220510233725-9ba8df137936",
+    "source": "https://pkg.go.dev/github.com/dprotaso/go-yit@v0.0.0-20220510233725-9ba8df137936",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "eaebde6329c077a94afd957ab0f0352810f500419accc6f13c2f9c34a957129f"
+      }
+    ],
+    "module_sum": "h1:PRxIJD8XjimM5aTknUK9w6DHLDox2r2M3DI4i2pnd3w="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "github.com/oapi-codegen/oapi-codegen/v2",
+    "version": "v2.8.0",
+    "source": "https://pkg.go.dev/github.com/oapi-codegen/oapi-codegen/v2@v2.8.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "module_sum": "h1:s4hxMxuqtR8jPzXkBTtFwY/SBuj3gEAYikmbBSdtLMM="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "github.com/speakeasy-api/jsonpath",
+    "version": "v0.6.3",
+    "source": "https://pkg.go.dev/github.com/speakeasy-api/jsonpath@v0.6.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c71d239df91726fc519c6eb72d318ec65820627232b2f796219e87dcf35d0ab4"
+      }
+    ],
+    "module_sum": "h1:c+QPwzAOdrWvzycuc9HFsIZcxKIaWcNpC+xhOW9rJxU="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "github.com/speakeasy-api/openapi",
+    "version": "v1.24.0",
+    "source": "https://pkg.go.dev/github.com/speakeasy-api/openapi@v1.24.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "8d6e3346ae1fb5ac8bde2175abca509281c3f32dbb1865c2f1ed1d7d2660870c"
+      }
+    ],
+    "module_sum": "h1:opoD27rupX7zBVPq1HkIGLeMOzNNA7JalhYP8q34i04="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "github.com/vmware-labs/yaml-jsonpath",
+    "version": "v0.3.2",
+    "source": "https://pkg.go.dev/github.com/vmware-labs/yaml-jsonpath@v0.3.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "804025845e9906e8a03f483c20804b2a70383f94cdee157198cf1984915f6ec3"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "404968fc1dbdb1f94f6a7868f2149a9ab63fe242783d7c7ab1ac71ad7b365913"
+      }
+    ],
+    "module_sum": "h1:/5QKeCBGdsInyDCyVNLbXyilb61MXGi9NP674f9Hobk="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "go.yaml.in/yaml/v3",
+    "version": "v3.0.5",
+    "source": "https://pkg.go.dev/go.yaml.in/yaml/v3@v3.0.5",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "f6c2dd3a67b576eafb89b80200b8b1627230bf3821a0c14cb99a22ac19107d00"
+      }
+    ],
+    "module_sum": "h1:N6y/pJk8buWs9NY5ERU2HSMfm+IuD/OtfdAnq6kESPw="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "golang.org/x/mod",
+    "version": "v0.41.0",
+    "source": "https://pkg.go.dev/golang.org/x/mod@v0.41.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:qJmnOUb4YB+FsEuM3HcWucdZASCPGhsX6uljO6pog0c="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "golang.org/x/tools",
+    "version": "v0.49.0",
+    "source": "https://pkg.go.dev/golang.org/x/tools@v0.49.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ],
+    "module_sum": "h1:3NI7VXzL9+1WZD52Dx2ttoPwD5DWrFGpl9mFZDlmisI="
+  },
+  {
+    "kind": "go-test-or-tool",
+    "name": "gopkg.in/yaml.v3",
+    "version": "v3.0.1",
+    "source": "https://pkg.go.dev/gopkg.in/yaml.v3@v3.0.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "d18f6323b71b0b768bb5e9616e36da390fbd39369a81807cca352de4e4e6aa0b"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "f6c2dd3a67b576eafb89b80200b8b1627230bf3821a0c14cb99a22ac19107d00"
+      }
+    ],
+    "module_sum": "h1:fxVm/GzAzEWqLHuvctI91KS9hhNmmWOoWu0XTYJS7CA="
+  },
+  {
+    "kind": "node-development",
+    "name": "@axe-core/playwright",
+    "version": "4.13.0",
+    "source": "https://www.npmjs.com/package/@axe-core/playwright/v/4.13.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "812e9d96e900a093ae4d1d3f22c5f82f568a0a0461c3007a99d00573d41c5461"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "@babel/code-frame",
+    "version": "7.29.7",
+    "source": "https://www.npmjs.com/package/@babel/code-frame/v/7.29.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@babel/helper-validator-identifier",
+    "version": "7.29.7",
+    "source": "https://www.npmjs.com/package/@babel/helper-validator-identifier/v/7.29.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "117da2af0d4ce0fe1c8e19b5cff9dcd806adf973d328d27b11d4448c4ff24f76"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@floating-ui/core",
+    "version": "1.8.0",
+    "source": "https://www.npmjs.com/package/@floating-ui/core/v/1.8.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@floating-ui/dom",
+    "version": "1.8.0",
+    "source": "https://www.npmjs.com/package/@floating-ui/dom/v/1.8.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@floating-ui/react-dom",
+    "version": "2.1.9",
+    "source": "https://www.npmjs.com/package/@floating-ui/react-dom/v/2.1.9",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@floating-ui/utils",
+    "version": "0.2.12",
+    "source": "https://www.npmjs.com/package/@floating-ui/utils/v/0.2.12",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e4c9a9b6c71019cbbea3bdc20b01223110a9035700f9c960c8fcbf78c2325ce"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@fontsource-variable/outfit",
+    "version": "5.3.0",
+    "source": "https://www.npmjs.com/package/@fontsource-variable/outfit/v/5.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e5fcef5d93bfcae273c11c00f0bb453d3b5491860e1ac8b658767b7577c938f"
+      }
+    ],
+    "declared_license": "OFL-1.1"
+  },
+  {
+    "kind": "node-development",
+    "name": "@jridgewell/gen-mapping",
+    "version": "0.3.13",
+    "source": "https://www.npmjs.com/package/@jridgewell/gen-mapping/v/0.3.13",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@jridgewell/remapping",
+    "version": "2.3.5",
+    "source": "https://www.npmjs.com/package/@jridgewell/remapping/v/2.3.5",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@jridgewell/resolve-uri",
+    "version": "3.1.2",
+    "source": "https://www.npmjs.com/package/@jridgewell/resolve-uri/v/3.1.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "b8778b155bfde5a28b023a558753c0fa058a52bb9de35c343c250be1bbcdedab"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@jridgewell/sourcemap-codec",
+    "version": "1.6.0",
+    "source": "https://www.npmjs.com/package/@jridgewell/sourcemap-codec/v/1.6.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@jridgewell/trace-mapping",
+    "version": "0.3.31",
+    "source": "https://www.npmjs.com/package/@jridgewell/trace-mapping/v/0.3.31",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "769d154fbde32a915af110b1123650bc79f4cbe675acc66e005265bf069c6c6c"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@oxc-project/types",
+    "version": "0.156.0",
+    "source": "https://www.npmjs.com/package/@oxc-project/types/v/0.156.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "95ced5ecf1133fbf41d409b5555c86c344f83f3b019926057ddbc07cfdcc27b3"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@playwright/test",
+    "version": "1.63.0",
+    "source": "https://www.npmjs.com/package/@playwright/test/v/1.63.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/primitive",
+    "version": "1.1.7",
+    "source": "https://www.npmjs.com/package/@radix-ui/primitive/v/1.1.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-arrow",
+    "version": "1.1.15",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-arrow/v/1.1.15",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-collection",
+    "version": "1.1.15",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-collection/v/1.1.15",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-compose-refs",
+    "version": "1.1.5",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-compose-refs/v/1.1.5",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-context",
+    "version": "1.2.2",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-context/v/1.2.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-dialog",
+    "version": "1.1.23",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-dialog/v/1.1.23",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-direction",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-direction/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-dismissable-layer",
+    "version": "1.1.19",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-dismissable-layer/v/1.1.19",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-dropdown-menu",
+    "version": "2.1.24",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-dropdown-menu/v/2.1.24",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-focus-guards",
+    "version": "1.1.6",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-focus-guards/v/1.1.6",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-focus-scope",
+    "version": "1.1.16",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-focus-scope/v/1.1.16",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-id",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-id/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-menu",
+    "version": "2.1.24",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-menu/v/2.1.24",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-popper",
+    "version": "1.3.7",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-popper/v/1.3.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-portal",
+    "version": "1.1.17",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-portal/v/1.1.17",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-presence",
+    "version": "1.1.10",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-presence/v/1.1.10",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-primitive",
+    "version": "2.1.10",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-primitive/v/2.1.10",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-roving-focus",
+    "version": "1.1.19",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-roving-focus/v/1.1.19",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-slot",
+    "version": "1.3.3",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-slot/v/1.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-callback-ref",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-callback-ref/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-controllable-state",
+    "version": "1.2.6",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-controllable-state/v/1.2.6",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-effect-event",
+    "version": "0.0.5",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-effect-event/v/0.0.5",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-is-hydrated",
+    "version": "0.1.3",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-is-hydrated/v/0.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-layout-effect",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-layout-effect/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-rect",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-rect/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/react-use-size",
+    "version": "1.1.4",
+    "source": "https://www.npmjs.com/package/@radix-ui/react-use-size/v/1.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@radix-ui/rect",
+    "version": "1.1.3",
+    "source": "https://www.npmjs.com/package/@radix-ui/rect/v/1.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0e80a2d229d2fd4fc7e8636142ec5d0ff0bc031f14c15b682e2ac01dfd5b5138"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@redocly/ajv",
+    "version": "8.11.2",
+    "source": "https://www.npmjs.com/package/@redocly/ajv/v/8.11.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a05350a88e318e4f5f2c2a1ff1e2e88daa4dd38e6e78b71cccae422bdc762cc3"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@redocly/config",
+    "version": "0.22.0",
+    "source": "https://www.npmjs.com/package/@redocly/config/v/0.22.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "92bb818822d131f7c4987ee5c4191eb3d73ea831b1f40904ea4f028b3cde1d64"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@redocly/openapi-core",
+    "version": "1.34.20",
+    "source": "https://www.npmjs.com/package/@redocly/openapi-core/v/1.34.20",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "f6bf9ce4d84b47c1cdda9d8988ac977efc314f00ad65e498fc514ddf118440b5"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@rolldown/binding-linux-x64-gnu",
+    "version": "1.2.16",
+    "source": "https://www.npmjs.com/package/@rolldown/binding-linux-x64-gnu/v/1.2.16",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@rolldown/pluginutils",
+    "version": "1.0.1",
+    "source": "https://www.npmjs.com/package/@rolldown/pluginutils/v/1.0.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "e1919b3b98b8bf6c1b99fcc60a0ed46027c97ac947432e1278446c9606f50161"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tailwindcss/node",
+    "version": "4.3.3",
+    "source": "https://www.npmjs.com/package/@tailwindcss/node/v/4.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tailwindcss/oxide",
+    "version": "4.3.3",
+    "source": "https://www.npmjs.com/package/@tailwindcss/oxide/v/4.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tailwindcss/oxide-linux-x64-gnu",
+    "version": "4.3.3",
+    "source": "https://www.npmjs.com/package/@tailwindcss/oxide-linux-x64-gnu/v/4.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tailwindcss/vite",
+    "version": "4.3.3",
+    "source": "https://www.npmjs.com/package/@tailwindcss/vite/v/4.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tanstack/query-core",
+    "version": "5.103.1",
+    "source": "https://www.npmjs.com/package/@tanstack/query-core/v/5.103.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@tanstack/react-query",
+    "version": "5.103.1",
+    "source": "https://www.npmjs.com/package/@tanstack/react-query/v/5.103.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a405ee70c632bb938acb7ac5f210e814409b3760ea9d2329d8ed8ffcfd11a0e7"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@types/node",
+    "version": "26.6.2",
+    "source": "https://www.npmjs.com/package/@types/node/v/26.6.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@types/react",
+    "version": "19.3.0",
+    "source": "https://www.npmjs.com/package/@types/react/v/19.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@types/react-dom",
+    "version": "19.3.0",
+    "source": "https://www.npmjs.com/package/@types/react-dom/v/19.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c2cfccb812fe482101a8f04597dfc5a9991a6b2748266c47ac91b6a5aae15383"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "@vitejs/plugin-react",
+    "version": "6.1.1",
+    "source": "https://www.npmjs.com/package/@vitejs/plugin-react/v/6.1.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "agent-base",
+    "version": "7.1.4",
+    "source": "https://www.npmjs.com/package/agent-base/v/7.1.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "ansi-colors",
+    "version": "4.1.3",
+    "source": "https://www.npmjs.com/package/ansi-colors/v/4.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "94e1923e52409cfd50e97988d9772c0de15f65700097e3227fec367a39e82b94"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "argparse",
+    "version": "2.0.1",
+    "source": "https://www.npmjs.com/package/argparse/v/2.0.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "de4d1f2d2ad5ad0cfd1657a106476b31cb5db5ef9d1ff842b237c0c81f0c8a23"
+      }
+    ],
+    "declared_license": "Python-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "aria-hidden",
+    "version": "1.2.6",
+    "source": "https://www.npmjs.com/package/aria-hidden/v/1.2.6",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "axe-core",
+    "version": "4.13.0",
+    "source": "https://www.npmjs.com/package/axe-core/v/4.13.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "af175b9d96ee93c21a036152e1b905b0b95304d4ae8c2c921c7609100ba8df7e"
+      },
+      {
+        "file": "LICENSE-3RD-PARTY.txt",
+        "sha256": "4f8563870d0fca38bbc3e00b6f670cb7fa9f380ba9f26a7f7d1184a6b18b1653"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "balanced-match",
+    "version": "1.0.2",
+    "source": "https://www.npmjs.com/package/balanced-match/v/1.0.2",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "a1bd5deadb6a06dd74efa852c1b8b23f63b67f2214fbe9c8bd591da51da69268"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "brace-expansion",
+    "version": "2.1.7",
+    "source": "https://www.npmjs.com/package/brace-expansion/v/2.1.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "68f12f6e2c33688699249c01d8f9623c534da20aa71989c57b061b7bc1676d14"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "change-case",
+    "version": "5.4.4",
+    "source": "https://www.npmjs.com/package/change-case/v/5.4.4",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "4eeb3271453a891df609e5a9f4ee79a68307f730c13417a3bfeffa604ac8cf25"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "colorette",
+    "version": "1.4.0",
+    "source": "https://www.npmjs.com/package/colorette/v/1.4.0",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "f101c761d255d0dddc77dd8a9327733b03d381798ec54a1bb718367207b48a8e"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "cookie",
+    "version": "1.1.1",
+    "source": "https://www.npmjs.com/package/cookie/v/1.1.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c02110eedc16c7114f1a9bdc026c65626ce1d9c7e27fd51a8e0feee8a48a6858"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "csstype",
+    "version": "3.2.3",
+    "source": "https://www.npmjs.com/package/csstype/v/3.2.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "11d55bd4541c75ee7879547ac49089c489163dae49551389713c3d026cab383e"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "debug",
+    "version": "4.4.3",
+    "source": "https://www.npmjs.com/package/debug/v/4.4.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "3a61c6c96caf5c1d9b623fb9b04c822b783dfcb78aa7e49c76a3f643e6ed7f95"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "detect-libc",
+    "version": "2.1.2",
+    "source": "https://www.npmjs.com/package/detect-libc/v/2.1.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "b40930bbcf80744c86c46a12bc9da056641d722716c378f5659b9e555ef833e1"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "detect-node-es",
+    "version": "1.1.0",
+    "source": "https://www.npmjs.com/package/detect-node-es/v/1.1.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "54b32293ea560d22cd9b62af9b2cda1a030d910a48c6601d227c5ff2338d95f8"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "enhanced-resolve",
+    "version": "5.25.1",
+    "source": "https://www.npmjs.com/package/enhanced-resolve/v/5.25.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "9068a8782d2fb4c6e432cfa25334efa56f722822180570802bf86e71b6003b1e"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "fast-deep-equal",
+    "version": "3.1.3",
+    "source": "https://www.npmjs.com/package/fast-deep-equal/v/3.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "fdir",
+    "version": "6.5.0",
+    "source": "https://www.npmjs.com/package/fdir/v/6.5.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "9a39f2aadab11a3697edd668ff2d8ad885b649737b7ab4d3bf12b34e5ada0c86"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "get-nonce",
+    "version": "1.0.1",
+    "source": "https://www.npmjs.com/package/get-nonce/v/1.0.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "acf3b087b348d2f2e731b9d4131af185aad694c1204ce14a46909483fd42da05"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "graceful-fs",
+    "version": "4.2.11",
+    "source": "https://www.npmjs.com/package/graceful-fs/v/4.2.11",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "f65c5d9f22a317b2a10803bd1868461ce6499c2ed7217bc80c0cc772a748789c"
+      }
+    ],
+    "declared_license": "ISC"
+  },
+  {
+    "kind": "node-development",
+    "name": "https-proxy-agent",
+    "version": "7.0.6",
+    "source": "https://www.npmjs.com/package/https-proxy-agent/v/7.0.6",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "8d8c55319c7729d57be811c747452636688d54f19701ee0752b6b15ad3771d9a"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "index-to-position",
+    "version": "1.2.0",
+    "source": "https://www.npmjs.com/package/index-to-position/v/1.2.0",
+    "licenses": [
+      {
+        "file": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "jiti",
+    "version": "2.7.0",
+    "source": "https://www.npmjs.com/package/jiti/v/2.7.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "46231df5a7733c3f52f11b71f3df61813007745b62b09031acfb45fb42d75082"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "js-levenshtein",
+    "version": "1.1.6",
+    "source": "https://www.npmjs.com/package/js-levenshtein/v/1.1.6",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0f57363c43caf754cf943327878c910ce1386c82c029462cf7274c4a50b5961f"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "js-tokens",
+    "version": "4.0.0",
+    "source": "https://www.npmjs.com/package/js-tokens/v/4.0.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "2213d91c606205c71eb051a199478cdc2adde945893404d7f1421436dd6d5cc1"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "js-yaml",
+    "version": "4.3.2",
+    "source": "https://www.npmjs.com/package/js-yaml/v/4.3.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a07bc24468b9654ce76a547d47a2db282d07733b715db4c73a98bd63961f9550"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "json-schema-traverse",
+    "version": "1.0.0",
+    "source": "https://www.npmjs.com/package/json-schema-traverse/v/1.0.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "7bf9b2de73a6b356761c948d0e9eeb4be6c1270bd04c79cd489c1e400ffdfc1a"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "lightningcss",
+    "version": "1.32.0",
+    "source": "https://www.npmjs.com/package/lightningcss/v/1.32.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "lightningcss",
+    "version": "1.33.0",
+    "source": "https://www.npmjs.com/package/lightningcss/v/1.33.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "lightningcss-linux-x64-gnu",
+    "version": "1.32.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-x64-gnu/v/1.32.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "lightningcss-linux-x64-gnu",
+    "version": "1.33.0",
+    "source": "https://www.npmjs.com/package/lightningcss-linux-x64-gnu/v/1.33.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5eba353fe5076ac3432177f8ab1cf75e3afcd0584251e37c3bfead5f447d040e"
+      }
+    ],
+    "declared_license": "MPL-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "lucide-react",
+    "version": "1.47.0",
+    "source": "https://www.npmjs.com/package/lucide-react/v/1.47.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "b495047bd93a9b06913511076f504daba17d5bbeb3e0650f3bb53a4220329c57"
+      }
+    ],
+    "declared_license": "ISC"
+  },
+  {
+    "kind": "node-development",
+    "name": "magic-string",
+    "version": "0.30.21",
+    "source": "https://www.npmjs.com/package/magic-string/v/0.30.21",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "1cbe51b907662f6cb1492b16c359384a595180bf0e4d101603ed525e75c4e484"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "minimatch",
+    "version": "5.1.9",
+    "source": "https://www.npmjs.com/package/minimatch/v/5.1.9",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "d11323827fa4edeaafc437cc5b91b6971b335f0127efeeb42bf5122fe8657e8f"
+      }
+    ],
+    "declared_license": "ISC"
+  },
+  {
+    "kind": "node-development",
+    "name": "ms",
+    "version": "2.1.3",
+    "source": "https://www.npmjs.com/package/ms/v/2.1.3",
+    "licenses": [
+      {
+        "file": "license.md",
+        "sha256": "1662fae9b5314d11cf51284e2dcd1f006a354f7343f08712a730fcff9a359801"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "nanoid",
+    "version": "3.3.19",
+    "source": "https://www.npmjs.com/package/nanoid/v/3.3.19",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "da4db1480d9beea3483a2eda5c53b22238d0827d57da162b48f122e04d2d9987"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "openapi-fetch",
+    "version": "0.17.0",
+    "source": "https://www.npmjs.com/package/openapi-fetch/v/0.17.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "bbcaaa447169c969087d38c3edc9ce44a6bd4f67152a8eed5aa9d43969e23edc"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "openapi-typescript",
+    "version": "7.13.0",
+    "source": "https://www.npmjs.com/package/openapi-typescript/v/7.13.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "ed4b2c8f3a9aad2bd9fb8088d3e2a142116a13627c7223c28315c65e3ab9bd41"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "openapi-typescript-helpers",
+    "version": "0.1.0",
+    "source": "https://www.npmjs.com/package/openapi-typescript-helpers/v/0.1.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "bbcaaa447169c969087d38c3edc9ce44a6bd4f67152a8eed5aa9d43969e23edc"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "parse-json",
+    "version": "8.3.0",
+    "source": "https://www.npmjs.com/package/parse-json/v/8.3.0",
+    "licenses": [
+      {
+        "file": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "picocolors",
+    "version": "1.1.1",
+    "source": "https://www.npmjs.com/package/picocolors/v/1.1.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "6582629e2979466878f6014313dcc2f3756c9616148682227ce3063dde310750"
+      }
+    ],
+    "declared_license": "ISC"
+  },
+  {
+    "kind": "node-development",
+    "name": "picomatch",
+    "version": "4.0.7",
+    "source": "https://www.npmjs.com/package/picomatch/v/4.0.7",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "d0cd141b0c322fded5dfad1d4645bb2fedfc05b7321fe1009469638190d59ef9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "playwright",
+    "version": "1.63.0",
+    "source": "https://www.npmjs.com/package/playwright/v/1.63.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "playwright-core",
+    "version": "1.63.0",
+    "source": "https://www.npmjs.com/package/playwright-core/v/1.63.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "45873d00a0dd243596deb4aa23b2493b3d1f0671921bf2538ea431d7380220eb"
+      },
+      {
+        "file": "NOTICE",
+        "sha256": "6d602191187b35b9b01d2cffa01c8469c2c8d9de8a96f1bf868e0f264f51c81d"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "pluralize",
+    "version": "8.0.0",
+    "source": "https://www.npmjs.com/package/pluralize/v/8.0.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5822e0d816e53e3537b306a4132cb7a70881897cf51bf483282148a602979076"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "postcss",
+    "version": "8.5.28",
+    "source": "https://www.npmjs.com/package/postcss/v/8.5.28",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "5be1f3465bba68a626777f984878814aaf35e7ef8e9fd314d469bcf887050fb8"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "punycode",
+    "version": "2.3.1",
+    "source": "https://www.npmjs.com/package/punycode/v/2.3.1",
+    "licenses": [
+      {
+        "file": "LICENSE-MIT.txt",
+        "sha256": "483acb265f182907d1caf6cff9c16c96f31325ed23792832cc5d8b12d5f88c8a"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react",
+    "version": "19.3.0",
+    "source": "https://www.npmjs.com/package/react/v/19.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-dom",
+    "version": "19.3.0",
+    "source": "https://www.npmjs.com/package/react-dom/v/19.3.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-remove-scroll",
+    "version": "2.7.2",
+    "source": "https://www.npmjs.com/package/react-remove-scroll/v/2.7.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-remove-scroll-bar",
+    "version": "2.3.8",
+    "source": "https://www.npmjs.com/package/react-remove-scroll-bar/v/2.3.8",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a79aae0c0f21990d9d963bb3c5a79cdcea9a46f8523ba55c58d7fe776b6ebc84"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-router",
+    "version": "7.18.4",
+    "source": "https://www.npmjs.com/package/react-router/v/7.18.4",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "77c9ee6a9c5d5782fb0c50b50d101189116314c14f7df0a1b0d385fc96a7ba49"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-router-dom",
+    "version": "7.18.4",
+    "source": "https://www.npmjs.com/package/react-router-dom/v/7.18.4",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "77c9ee6a9c5d5782fb0c50b50d101189116314c14f7df0a1b0d385fc96a7ba49"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "react-style-singleton",
+    "version": "2.2.3",
+    "source": "https://www.npmjs.com/package/react-style-singleton/v/2.2.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "require-from-string",
+    "version": "2.0.2",
+    "source": "https://www.npmjs.com/package/require-from-string/v/2.0.2",
+    "licenses": [
+      {
+        "file": "license",
+        "sha256": "6ee0feb1f6ef996ff5a68600f8cf98909cf412d39ef3cdceaefd87d636fa1b7f"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "rolldown",
+    "version": "1.2.16",
+    "source": "https://www.npmjs.com/package/rolldown/v/1.2.16",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "23ecfff35a5a2e80d92142f75228912c3b1abc4b5a8337a821ff4397e2f9f734"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "scheduler",
+    "version": "0.28.0",
+    "source": "https://www.npmjs.com/package/scheduler/v/0.28.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "da6d3703ed11cbe42bd212c725957c98da23cbff1998c05fa4b3d976d1a58e93"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "set-cookie-parser",
+    "version": "2.7.2",
+    "source": "https://www.npmjs.com/package/set-cookie-parser/v/2.7.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "c5c6c5183a789d122f267c405f685037efb87e27fcde28ab1dd7378a2d2f5962"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "source-map-js",
+    "version": "1.2.2",
+    "source": "https://www.npmjs.com/package/source-map-js/v/1.2.2",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "6cb0631f71c7749763fd3dd1d5bee52dd1070ec17f2edc1710079ad070bd2fbd"
+      }
+    ],
+    "declared_license": "BSD-3-Clause"
+  },
+  {
+    "kind": "node-development",
+    "name": "supports-color",
+    "version": "10.2.2",
+    "source": "https://www.npmjs.com/package/supports-color/v/10.2.2",
+    "licenses": [
+      {
+        "file": "license",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "tailwindcss",
+    "version": "4.3.3",
+    "source": "https://www.npmjs.com/package/tailwindcss/v/4.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "60e0b68c0f35c078eef3a5d29419d0b03ff84ec1df9c3f9d6e39a519a5ae7985"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "tapable",
+    "version": "2.3.3",
+    "source": "https://www.npmjs.com/package/tapable/v/2.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "824ef6c33ae5ecbbab65d37f2b37da2bfc81d76cf7676ec0f59d00a0a38bdb75"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "tinyglobby",
+    "version": "0.2.17",
+    "source": "https://www.npmjs.com/package/tinyglobby/v/0.2.17",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "22c68811e174cbbfb3813d4135918df4f540959c14d872e601d9abe83d3cde8f"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "tslib",
+    "version": "2.8.1",
+    "source": "https://www.npmjs.com/package/tslib/v/2.8.1",
+    "licenses": [
+      {
+        "file": "CopyrightNotice.txt",
+        "sha256": "da16ddb65f8ca390998fb99223d0112498b56b45784d00afd77ff8ce1ac4de8b"
+      },
+      {
+        "file": "LICENSE.txt",
+        "sha256": "210b19e543130388c68654b7497e967119ce17145f66ab7d85688fbd70f08751"
+      }
+    ],
+    "declared_license": "0BSD"
+  },
+  {
+    "kind": "node-development",
+    "name": "type-fest",
+    "version": "4.41.0",
+    "source": "https://www.npmjs.com/package/type-fest/v/4.41.0",
+    "licenses": [
+      {
+        "file": "license-cc0",
+        "sha256": "a2010f343487d3f7618affe54f789f5487602331c0a8d03f49e9a7c547cf0499"
+      },
+      {
+        "file": "license-mit",
+        "sha256": "5c932d88256b4ab958f64a856fa48e8bd1f55bc1d96b8149c65689e0c61789d3"
+      }
+    ],
+    "declared_license": "(MIT OR CC0-1.0)"
+  },
+  {
+    "kind": "node-development",
+    "name": "typescript",
+    "version": "5.9.3",
+    "source": "https://www.npmjs.com/package/typescript/v/5.9.3",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "a7d00bfd54525bc694b6e32f64c7ebcf5e6b7ae3657be5cc12767bce74654a47"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "undici-types",
+    "version": "8.9.0",
+    "source": "https://www.npmjs.com/package/undici-types/v/8.9.0",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "a6db8096b2707bc0102d256917d4d33f298ba36d8c3f25de067a2b5bb379db27"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "uqr",
+    "version": "0.1.3",
+    "source": "https://www.npmjs.com/package/uqr/v/0.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "b39d50e24727f341a0ebdb2ab040c57efaf4076a8ad5b1d0c8c45beb975b4571"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "uri-js",
+    "version": "4.4.1",
+    "source": "https://www.npmjs.com/package/uri-js/v/4.4.1",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "0af366eff4c01ec147c9c61ea9e8ffad64a4294754c9d79355f3fd1b97cb2fb9"
+      }
+    ],
+    "declared_license": "BSD-2-Clause"
+  },
+  {
+    "kind": "node-development",
+    "name": "use-callback-ref",
+    "version": "1.3.3",
+    "source": "https://www.npmjs.com/package/use-callback-ref/v/1.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "use-sidecar",
+    "version": "1.1.3",
+    "source": "https://www.npmjs.com/package/use-sidecar/v/1.1.3",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "30f0cfddf483d1128e3610205020f2041a6c5e837aa999e0aa82e5576187d4a9"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "vite",
+    "version": "8.3.3",
+    "source": "https://www.npmjs.com/package/vite/v/8.3.3",
+    "licenses": [
+      {
+        "file": "LICENSE.md",
+        "sha256": "a47172e44a86a7e2cd1c16282341f7726ec60caafe3a6166fe3e0602005b6fa6"
+      }
+    ],
+    "declared_license": "MIT"
+  },
+  {
+    "kind": "node-development",
+    "name": "yaml-ast-parser",
+    "version": "0.0.43",
+    "source": "https://www.npmjs.com/package/yaml-ast-parser/v/0.0.43",
+    "licenses": [
+      {
+        "file": "license.txt",
+        "sha256": "bf602897f63ff2706e3059fd60321ab5273a691833c98820433ef1d18abed6a2"
+      }
+    ],
+    "declared_license": "Apache-2.0"
+  },
+  {
+    "kind": "node-development",
+    "name": "yargs-parser",
+    "version": "21.1.1",
+    "source": "https://www.npmjs.com/package/yargs-parser/v/21.1.1",
+    "licenses": [
+      {
+        "file": "LICENSE.txt",
+        "sha256": "365496ca1f56da40b23c9815fc40fa9005847b2f8f8fd1c1a4929ef25ec8cd1d"
+      }
+    ],
+    "declared_license": "ISC"
+  },
+  {
+    "kind": "toolchain-and-stdlib",
+    "name": "Go",
+    "version": "go1.27.4",
+    "source": "https://go.dev/",
+    "licenses": [
+      {
+        "file": "LICENSE",
+        "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+      }
+    ]
+  }
+]

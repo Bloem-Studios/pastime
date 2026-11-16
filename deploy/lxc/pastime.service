@@ -1,0 +1,19 @@
+[Unit]
+Description=Pastime web server
+After=network-online.target docker.service
+Wants=network-online.target
+Requires=docker.service
+
+[Service]
+User=pastime
+EnvironmentFile=/etc/pastime/pastime.env
+ExecStart=/usr/local/bin/pastime serve
+Restart=always
+RestartSec=5
+NoNewPrivileges=yes
+ProtectSystem=strict
+ProtectHome=yes
+PrivateTmp=yes
+
+[Install]
+WantedBy=multi-user.target

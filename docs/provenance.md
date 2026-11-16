@@ -1,0 +1,29 @@
+# Licence and provenance
+
+## Licence
+
+Pastime is licensed under the GNU Affero General Public License, version 3 only (AGPL-3.0-only). See [LICENSE](../LICENSE). Third-party dependencies and assets keep their own licences, listed in the [dependency inventory](../third_party/README.md). Pastime's licence does not override them.
+
+If you run a modified Pastime for other people over a network, section 13 of the AGPL requires you to offer them the source of your modified version.
+
+## How the code was written
+
+Pastime is an independently implemented project. It is not a port of Floppy (a Python media tracker, [Bloem-Studios/Floppy](https://github.com/Bloem-Studios/Floppy)) or of Silo. Floppy informed which behaviours a media tracker needs, and Silo informed the technology and design direction. Pastime is written in Go and TypeScript, and its API is its own.
+
+Floppy and Silo are also AGPL-3.0, so reusing their code would be licence-compatible. The project still prefers its own implementation, and any reuse follows these rules:
+
+1. Code, tests, schemas, templates, CSS or assets from an AGPL-3.0 project such as Floppy or Silo may be reused only with their copyright notices kept, an entry in `third_party/NOTICES.txt` and a commit message naming the source and revision. Material under any other licence needs its own clearance.
+2. Author the application, migrations, UI components, schemas and tests independently. The syntax and behaviour of public protocols are requirements to characterise, not permission to copy an implementation.
+3. Keep external-integration inventories factual: paths, request and response fields, authorisation behaviour, status codes and observable outcomes.
+4. Use synthetic users, media records and event sequences in development and tests. Never put production data in the repository.
+5. Install libraries from their original distribution, not copied out of another application.
+6. Keep a dependency and asset inventory with exact versions, licence texts and notices, including transitive Go and npm dependencies, fonts, icons and build tools.
+7. Use no other product's logo or unlicensed poster artwork. Provider API terms and artwork rights are separate from software licences.
+
+Source from both applications was inspected while the project was designed, so Pastime is **not** a formal clean-room implementation, and nothing here claims it is. The [October capabilities](october-capabilities.md) were built from Floppy's public release notes and the published API documentation of the external services involved (MangaBaka, Grand Comics Database, TheTVDB, YouTube oEmbed, Komga, Kavita, Kapowarr); no Floppy source was read for them. The [September capabilities](september-capabilities.md) followed a behavioural review of Floppy and the published documentation of Mylar3, ListenBrainz, Navidrome, WeTrakr and OpenCritic.
+
+## What this page does not decide
+
+This is an engineering policy, not a legal opinion about API copyright, patents, trademarks, database rights or any jurisdiction. Automated licence scanners do not give legal clearance. Pastime is a working name.
+
+The [dependency inventory](../third_party/README.md) covers application and tooling notices. [Host recovery tools](../third_party/host-tools/README.md) and container images have separate distribution terms.

@@ -1,0 +1,42 @@
+# PostgreSQL and Valkey for a single-host Pastime install. Both listen on loopback only;
+# the pastime binary runs under systemd next to them (pastime.service, pastime-worker.service).
+name: pastime
+services:
+  postgres:
+    # An unprivileged LXC container cannot grant Docker's default open-file limit,
+    # which stops PostgreSQL from starting; stay within the container's 524288.
+    ulimits:
+      nofile:
+        soft: 524288
+        hard: 524288
+    image: postgres@sha256:9a8afca54e7861fd90fab5fdf4c42477a6b1cb7d293595148e674e0a3181de15
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: pastime
+      POSTGRES_DB: pastime
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?set in /etc/pastime/compose.env}
+    command: [postgres, -c, config_file=/etc/postgresql/pastime.conf]
+    ports:
+      - "127.0.0.1:5432:5432"
+    volumes:
+      - /var/lib/pastime/postgres:/var/lib/postgresql
+      - ./postgresql.conf:/etc/postgresql/pastime.conf:ro
+    shm_size: 1g
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U pastime -d pastime"]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    logging: {driver: json-file, options: {max-size: 10m, max-file: "3"}}
+  valkey:
+    image: valkey/valkey@sha256:d2e18f3410b6f616de1417f570fa55261af2898b9c5b2cfb6781ce2373ea43d1
+    restart: unless-stopped
+    command: [valkey-server, --save, "", --appendonly, "no", --maxmemory, 512mb, --maxmemory-policy, allkeys-lru]
+    ports:
+      - "127.0.0.1:6379:6379"
+    healthcheck:
+      test: [CMD, valkey-cli, ping]
+      interval: 10s
+      timeout: 3s
+      retries: 10
+    logging: {driver: json-file, options: {max-size: 10m, max-file: "3"}}

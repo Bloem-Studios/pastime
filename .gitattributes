@@ -1,0 +1,7 @@
+internal/httpapi/assets/swagger-ui* linguist-vendored=true -whitespace -text
+third_party/NOTICES.txt linguist-generated=true -whitespace -text
+third_party/license-sources/** -whitespace -text
+third_party/swagger-ui-dist/LICENSE -whitespace -text
+third_party/swagger-ui-dist/NOTICE -whitespace -text
+internal/httpapi/types.gen.go linguist-generated=true
+web/src/api/schema.gen.ts linguist-generated=true

@@ -1,0 +1,62 @@
+/* Discover: one search row, one row of media types, then titles. */
+.discover-search { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; margin: 0 0 12px; }
+.discover-search .search-form { flex: 1 1 320px; min-width: 0; min-height: 44px; padding: 0 4px 0 16px; }
+.discover-search .search-form input { min-height: 42px; }
+.discover-search .search-form .button { flex: none; }
+.discover-search .select-pill, .discover-manual { min-height: 44px; }
+.discover-search .select-pill select { max-width: 14em; }
+.discover-manual { background: var(--surface); box-shadow: inset 0 0 0 1px var(--line); }
+.discover-manual:hover:not(:disabled) { background: var(--surface-hover); }
+
+/* Media types: one row that scrolls sideways instead of wrapping into a second band. */
+.discover-kinds { flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; margin: 0 0 20px; }
+.discover-kinds::-webkit-scrollbar { display: none; }
+.discover-kinds > * { flex: none; }
+
+.results-head .discover-mode { margin-left: auto; }
+.discover-mode button { height: 32px; font-size: 13px; font-weight: 500; }
+
+/* Notices keep their icon on the text's first line. */
+.browse-notice { display: flex; align-items: flex-start; gap: 8px; margin: 0 0 20px; padding: 10px 14px; color: var(--muted); }
+.browse-notice svg.lucide { width: 16px; height: 16px; margin: 4px 0 0; vertical-align: 0; color: var(--muted); }
+
+.discovery-filters { display: flex; flex-wrap: wrap; gap: 12px; align-items: end; margin: 0 0 20px; }
+.discovery-filters label { display: grid; gap: 6px; color: var(--muted); font-size: 13px; min-width: 0; }
+.discovery-filters input, .discovery-filters select { min-height: 40px; max-width: 100%; padding: 0 12px; border: 1px solid var(--field-line); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); }
+.discovery-filters input[type='number'] { width: 120px; }
+.discovery-filters .button { min-height: 40px; }
+.discovery-paging { display: flex; flex-wrap: wrap; justify-content: center; align-items: center; gap: 16px; margin-block: 24px; }
+.discovery-paging:empty { margin: 0; }
+
+/* Result cards: a single title line, and one action slot that is the same height whatever it holds. */
+.result-card .result-title { padding-block: 6px; margin-block: -6px; }
+.result-card .card-action, .result-card .card-state { min-height: 36px; }
+.card-state { display: inline-flex; align-items: center; justify-self: start; padding: 0; text-align: left; }
+.card-state .status { font-size: 13px; }
+.card-state:hover .status { text-decoration: underline; text-underline-offset: 3px; }
+
+/* "Not interested" shows on hover or focus with a mouse; on touch it stays, as a small mark in a 44px target. */
+.result-card .art-dismiss { opacity: 0; }
+.result-card:hover .art-dismiss, .result-card:focus-within .art-dismiss { opacity: 1; }
+@media (pointer: coarse) {
+  .result-card .art-dismiss { opacity: 1; top: 2px; right: 2px; width: 44px; height: 44px; padding: 8px; background-clip: content-box; }
+  .result-card .card-action, .result-card .card-state { min-height: 44px; }
+}
+
+.discovery-undo { display: grid; gap: 4px; padding: 8px 14px; border: 1px solid var(--line); border-radius: var(--radius); margin-bottom: 20px; }
+.discovery-undo > div { display: flex; gap: 12px; align-items: center; justify-content: space-between; min-height: 44px; }
+.discovery-undo > div span { overflow-wrap: anywhere; min-width: 0; }
+.discovery-undo .button { flex: none; }
+.discovery-hidden { margin: 8px 0 24px; }
+.discovery-hidden .discovery-undo { margin-top: 8px; }
+
+@media (max-width: 767px) {
+  .discover-search .search-form { flex: 1 1 0; }
+  .discover-manual { width: 44px; padding: 0; }
+  .discover-manual span { display: none; }
+  .discover-source { order: 3; flex: 1 1 100%; }
+  .discover-search .select-pill select { max-width: none; width: 100%; }
+  .discover-kinds { margin-inline: -24px; padding-inline: 24px; scroll-padding-inline: 22px; }
+  .discovery-filters label { flex: 1 1 120px; }
+  .discovery-filters input[type='number'] { width: 100%; }
+}

@@ -1,0 +1,6 @@
+[Unit]
+Description=Pastime database dump
+
+[Service]
+Type=oneshot
+ExecStart=/opt/pastime/backup.sh

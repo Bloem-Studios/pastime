@@ -1,0 +1,45 @@
+/* Activity: library changes by day, one quiet line each. Bursts and imports fold into one row
+   whose titles open beneath it. Same day headings and row rules as History. */
+.activity-page .num { font-variant-numeric: tabular-nums; }
+.activity-days { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.activity-day-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.activity-day-head h2 { font-size: 16px; font-weight: 600; letter-spacing: 0; }
+.activity-day-head span { font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+.activity-rows { list-style: none; margin: 0; padding: 0; }
+.activity-row { display: grid; grid-template-columns: 36px minmax(0, 1fr) 10.5em 44px; column-gap: 16px; align-items: center; min-height: 64px; padding: 8px 0; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.activity-row:last-child { border-bottom: 0; }
+.activity-cover { display: block; width: 32px; }
+.activity-page .activity-cover .cover, .activity-page .activity-stack .cover { width: 32px; height: 48px; min-height: 0; aspect-ratio: auto; padding: 0; border-radius: 4px; overflow: hidden; background: var(--surface-raised); box-shadow: none; }
+.activity-page :is(.activity-cover, .activity-stack) .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.activity-page :is(.activity-cover, .activity-stack) .cover:not(.has-image) > * { display: none; }
+.activity-line { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-size: 14px; max-width: none; }
+.activity-title { font-weight: 600; color: var(--text); }
+a.activity-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.activity-change { margin-left: 4px; color: var(--muted); }
+.activity-time { text-align: right; font-size: 13px; color: var(--muted); white-space: nowrap; }
+.activity-row .icon-button { color: var(--muted); }
+.activity-row .icon-button:hover { color: var(--text); }
+.activity-row svg.flip { transform: rotate(180deg); }
+
+/* A pile of up to three covers for a folded row. */
+.activity-stack { position: relative; width: 36px; height: 52px; }
+.activity-page .activity-stack .cover { position: absolute; width: 28px; height: 42px; border: 1px solid var(--canvas); }
+.activity-page .activity-stack .cover:nth-child(1) { left: 0; top: 10px; z-index: 3; }
+.activity-page .activity-stack .cover:nth-child(2) { left: 4px; top: 5px; z-index: 2; }
+.activity-page .activity-stack .cover:nth-child(3) { left: 8px; top: 0; z-index: 1; }
+
+.activity-sub { grid-column: 2 / -1; list-style: none; margin: 6px 0 0; padding: 0; }
+.activity-sub li { display: grid; grid-template-columns: 24px minmax(0, 1fr); column-gap: 12px; align-items: center; min-height: 48px; border-top: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.activity-sub .activity-cover { width: 24px; }
+.activity-page .activity-sub .activity-cover .cover { width: 24px; height: 36px; }
+
+@media (max-width: 767px) {
+  /* Two lines on the phone: the title, then what changed. */
+  .activity-row { grid-template-columns: 32px minmax(0, 1fr) auto 44px; column-gap: 12px; min-height: 64px; }
+  .activity-line { white-space: normal; }
+  .activity-title { display: block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .activity-change { display: block; margin-left: 0; margin-top: 2px; font-size: 13px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+  .activity-time { font-size: 12px; }
+  .activity-sub { grid-column: 1 / -1; }
+}

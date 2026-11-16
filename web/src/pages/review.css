@@ -1,0 +1,70 @@
+/* Year in Review: the year as a story. Months with their time, the moments that stood out, and
+   where the time went with the titles that took it. Every block spans the 1100px canvas, so no
+   pair has to share a bottom edge. */
+.review-page .num { font-variant-numeric: tabular-nums; }
+.review-nav { display: flex; gap: 8px; flex-wrap: wrap; }
+
+.review-card { margin-bottom: 16px; padding: 16px 20px 20px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.review-card-head { display: flex; justify-content: space-between; align-items: baseline; flex-wrap: wrap; gap: 4px 12px; margin-bottom: 16px; }
+.review-card-head h2 { font-size: 15px; font-weight: 600; letter-spacing: 0; }
+.review-card-head > span { font-size: 13px; color: var(--muted); }
+
+/* Months: columns on a 200px track, each with its time just above the bar. */
+.review-months { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 8px; }
+.review-months li { min-width: 0; }
+.month-track { position: relative; display: block; height: 200px; border-bottom: 1px solid var(--field-line); }
+.month-fill { position: absolute; left: 12%; right: 12%; bottom: 0; height: calc(var(--v, 0) * 86%); background: color-mix(in srgb, var(--accent) 62%, var(--surface)); }
+.review-months li.busiest .month-fill, .review-months li:hover .month-fill { background: var(--accent); }
+.month-value { position: absolute; left: 0; right: 0; bottom: calc(var(--v, 0) * 86% + 6px); font-size: 12px; line-height: 1.2; text-align: center; white-space: nowrap; }
+.review-months li.busiest .month-value { font-weight: 600; }
+.review-months li.empty .month-value { color: var(--muted); }
+.month-name { display: block; margin-top: 8px; font-size: 12px; color: var(--muted); text-align: center; }
+.review-months li.future .month-name { opacity: .6; }
+
+/* Moments: label over value over a grey line, on a four-column grid. */
+.review-moments { display: grid; grid-template-columns: repeat(auto-fit, minmax(160px, 1fr)); gap: 20px; margin: 0; }
+.moment { min-width: 0; }
+.moment dt { font-size: 13px; color: var(--muted); }
+.moment dd { margin: 4px 0 0; font-size: 18px; font-weight: 600; line-height: 1.3; }
+.moment-sub { display: block; margin-top: 2px; font-size: 13px; font-weight: 400; color: var(--muted); }
+.moment-title { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; align-items: center; }
+.moment-title .review-title { font-size: 16px; white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+
+/* Where the time went: each kind of media, its share, and its biggest titles with covers. */
+.review-types { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px 32px; align-items: start; }
+.review-type-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; }
+.review-type-head h3 { font-size: 15px; font-weight: 600; }
+.review-type-head span { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.review-share { display: block; height: 4px; margin: 8px 0 4px; border-radius: 2px; background: color-mix(in srgb, var(--line) 70%, transparent); }
+.review-share > span { display: block; height: 100%; border-radius: 2px; background: var(--accent); }
+.review-titles { list-style: none; margin: 0; padding: 0; }
+.review-titles li { display: grid; grid-template-columns: 48px minmax(0, 1fr); gap: 14px; align-items: center; padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.review-titles li:last-child { border-bottom: 0; }
+.review-titles p { margin-top: 2px; font-size: 13px; color: var(--muted); max-width: none; }
+.review-title { display: block; font-size: 15px; font-weight: 600; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.review-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.review-cover { display: block; }
+.review-page .review-cover .cover { width: 48px; height: 72px; aspect-ratio: auto; min-height: 0; padding: 0; border-radius: 4px; overflow: hidden; background: var(--surface-raised); box-shadow: none; }
+.review-page .moment-title .review-cover .cover { width: 40px; height: 60px; }
+.review-page .review-cover .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.review-page .review-cover .cover:not(.has-image) > * { display: none; }
+
+@media (max-width: 767px) {
+  /* The other years stay beside the title. */
+  .review-page .page-heading { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .review-page .page-heading .actions { flex: none; }
+  .review-card { padding: 14px 16px 16px; }
+  /* Months become rows: name, a bar from the left, the time after its end. */
+  .review-months { grid-template-columns: minmax(0, 1fr); gap: 0; }
+  .review-months li { display: grid; grid-template-columns: 44px minmax(0, 1fr); align-items: center; min-height: 32px; }
+  .month-name { order: -1; margin: 0; font-size: 13px; text-align: left; }
+  .month-track { height: 24px; border-bottom: 0; }
+  .month-fill { top: 5px; bottom: 5px; left: 0; right: auto; height: auto; width: calc(var(--v, 0) * 72%); }
+  .month-value { left: calc(var(--v, 0) * 72% + 8px); right: auto; bottom: auto; top: 50%; transform: translateY(-50%); font-size: 13px; text-align: left; }
+  .review-moments { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+  .moment.wide { grid-column: 1 / -1; }
+  .moment dd { font-size: 16px; }
+  .review-types { grid-template-columns: minmax(0, 1fr); }
+  .review-titles li { grid-template-columns: 40px minmax(0, 1fr); gap: 12px; }
+  .review-page .review-titles .review-cover .cover { width: 40px; height: 60px; }
+}

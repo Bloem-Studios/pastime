@@ -1,0 +1,121 @@
+/* Calendar: one row of controls, then the agenda as day-grouped rows (History's pattern) with
+   the month and the titles coming up in a 300px rail, or the month as a grid of equal rows.
+   At 1440 the canvas is 1100px: 768 + 32 + 300. */
+.calendar-page .num { font-variant-numeric: tabular-nums; }
+
+.calendar-tools { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; margin: 0 0 24px; }
+.calendar-view { display: inline-flex; gap: 2px; padding: 4px; border-radius: var(--pill); background: var(--surface); border: 1px solid var(--line); }
+.calendar-view button { min-height: 34px; padding: 0 16px; border-radius: var(--pill); font-size: 13px; font-weight: 500; color: var(--muted); }
+.calendar-view button:hover { color: var(--text); }
+.calendar-view button[aria-pressed='true'] { background: color-mix(in srgb, var(--text) 12%, var(--surface)); color: var(--text); }
+
+.calendar-layout { display: grid; grid-template-columns: minmax(0, 1fr) 300px; gap: 32px; align-items: start; }
+.calendar-main { min-width: 0; }
+
+.release-days { list-style: none; margin: 0; padding: 0; display: grid; gap: 28px; }
+.release-day { scroll-margin-top: 88px; }
+.release-day-head { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; padding-bottom: 8px; border-bottom: 1px solid var(--line); }
+.release-day-head h2 { font-size: 16px; font-weight: 600; letter-spacing: 0; }
+.release-day-head span { font-size: 13px; color: var(--muted); white-space: nowrap; }
+.release-day.is-today .release-day-head span { color: var(--text); font-weight: 600; }
+.release-rows { list-style: none; margin: 0; padding: 0; }
+.release-row { display: grid; grid-template-columns: 40px minmax(0, 1fr) 6em; column-gap: 16px; align-items: center; min-height: 80px; padding: 10px 0; border-bottom: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.release-row:last-child { border-bottom: 0; }
+.release-cover { display: block; width: 40px; }
+.calendar-page .release-cover .cover, .dialog-content .release-cover .cover { width: 40px; height: 60px; min-height: 0; aspect-ratio: auto; padding: 0; border-radius: 4px; overflow: hidden; background: var(--surface-raised); box-shadow: none; }
+:is(.calendar-page, .dialog-content) .release-cover .cover img { width: 100%; height: 100%; object-fit: cover; display: block; }
+:is(.calendar-page, .dialog-content) .release-cover .cover:not(.has-image) > * { display: none; }
+.release-main { min-width: 0; }
+.release-title { display: block; font-size: 15px; font-weight: 600; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+a.release-title:hover { text-decoration: underline; text-underline-offset: 3px; }
+.release-detail { display: flex; align-items: center; gap: 8px; min-width: 0; margin-top: 2px; font-size: 13px; color: var(--muted); max-width: none; }
+.release-detail > span:first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.release-tag { flex: none; padding: 1px 8px; border-radius: 4px; font-size: 12px; color: var(--text); background: var(--surface-hover); white-space: nowrap; }
+.release-play { display: inline-flex; align-items: center; gap: 6px; min-height: 32px; margin-top: 2px; font-size: 13px; font-weight: 600; color: var(--text); text-decoration: underline; text-decoration-color: color-mix(in srgb, var(--text) 35%, transparent); text-underline-offset: 4px; }
+.release-play svg { width: 14px; height: 14px; }
+.release-time { text-align: right; font-size: 13px; color: var(--muted); white-space: nowrap; }
+
+/* The rail. */
+.calendar-rail { position: sticky; top: 88px; display: grid; gap: 16px; }
+.mini-month, .coming-up { padding: 16px; border-radius: var(--radius); background: var(--surface); }
+.mini-month-head { display: flex; justify-content: space-between; align-items: center; margin-bottom: 8px; }
+.mini-month-head h2, .coming-up h2 { font-size: 16px; font-weight: 600; letter-spacing: 0; }
+.mini-month-head > div { display: flex; gap: 2px; }
+.mini-month-head .icon-button { width: 36px; height: 36px; min-height: 36px; }
+.mini-month-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); gap: 4px; }
+.mini-weekday { padding: 2px 0 4px; text-align: center; font-size: 12px; color: var(--muted); }
+.mini-day { aspect-ratio: 1; display: grid; place-items: center; border-radius: 6px; font-size: 12px; font-variant-numeric: tabular-nums; color: var(--muted); }
+.mini-day.has-release { color: var(--text); font-weight: 600; background: color-mix(in srgb, var(--accent) 22%, var(--surface)); }
+button.mini-day:hover { outline: 1px solid var(--text); }
+.mini-day.today { box-shadow: inset 0 0 0 1px var(--text); }
+.mini-day.outside { visibility: hidden; }
+.coming-up h2 { margin-bottom: 4px; }
+.coming-up ul { list-style: none; margin: 0; padding: 0; }
+.coming-up li { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; padding: 8px 0; font-size: 14px; border-top: 1px solid color-mix(in srgb, var(--line) 55%, transparent); }
+.coming-up li:first-child { border-top: 0; }
+.coming-up li > :first-child { min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.coming-up a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.coming-up .num { flex: none; font-size: 13px; color: var(--muted); }
+
+/* Month: equal rows, every release named, the date in the corner. */
+.month-view-head { display: flex; justify-content: space-between; align-items: center; gap: 12px; margin-bottom: 8px; }
+.month-view-head h2 { font-size: 18px; font-weight: 600; letter-spacing: 0; }
+.month-view-nav { display: flex; align-items: center; gap: 4px; }
+.month-view-nav .text-button { margin-right: 8px; }
+.month-weekdays, .month-grid { display: grid; grid-template-columns: repeat(7, minmax(0, 1fr)); }
+.month-weekdays span { padding: 8px; font-size: 12px; color: var(--muted); }
+.month-grid { list-style: none; margin: 0; padding: 0; grid-auto-rows: 1fr; border-top: 1px solid var(--line); border-left: 1px solid var(--line); }
+.month-cell { min-width: 0; border-right: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+.month-day { display: flex; flex-direction: column; align-items: stretch; gap: 6px; width: 100%; height: 100%; min-height: 112px; padding: 8px; text-align: left; color: var(--text); }
+button.month-day:hover { background: var(--surface); }
+.month-date { display: inline-grid; place-items: center; width: 26px; height: 26px; margin: -4px 0 0 -4px; border-radius: 50%; font-size: 13px; color: var(--muted); font-variant-numeric: tabular-nums; }
+.month-cell.is-today .month-date { color: var(--text); font-weight: 600; box-shadow: inset 0 0 0 1px var(--text); }
+.month-cell.outside .month-day { opacity: .4; }
+.month-release { display: grid; min-width: 0; padding-left: 8px; border-left: 2px solid var(--accent); }
+.month-release-title { font-size: 12px; font-weight: 600; line-height: 1.35; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.month-release-detail { font-size: 12px; line-height: 1.35; color: var(--muted); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.month-more { font-size: 12px; color: var(--muted); }
+.month-dots { display: none; }
+
+/* Silo playback links (administrators): a disclosure with a drawn chevron. */
+.calendar-page details.detail-section { margin-top: 40px; padding-top: 0; border-top: 1px solid var(--line); }
+.calendar-page details.detail-section > summary { list-style: none; display: flex; align-items: center; justify-content: space-between; min-height: 52px; font-size: 15px; font-weight: 600; cursor: pointer; }
+.calendar-page details.detail-section > summary::-webkit-details-marker { display: none; }
+.calendar-page details.detail-section > summary::after { content: ''; width: 8px; height: 8px; margin-right: 6px; border-right: 2px solid var(--muted); border-bottom: 2px solid var(--muted); transform: translateY(-2px) rotate(45deg); transition: transform var(--fast) var(--ease); }
+.calendar-page details.detail-section[open] > summary::after { transform: translateY(2px) rotate(-135deg); }
+.calendar-page details.detail-section[open] > summary { margin-bottom: 8px; }
+.calendar-page details.detail-section form { max-width: 560px; }
+
+.subscription-label { display: block; margin: 4px 0 6px; font-size: 13px; font-weight: 600; }
+.subscription-note { margin: 8px 0 0; font-size: 14px; color: var(--muted); }
+
+@media (max-width: 1099px) {
+  .calendar-layout { grid-template-columns: minmax(0, 1fr); }
+  .calendar-rail { display: none; }
+}
+@media (max-width: 767px) {
+  /* The title keeps Subscribe beside it, and the controls stay on one row. */
+  .calendar-page .page-heading { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .calendar-page .page-heading .actions { flex: none; }
+  .calendar-tools { flex-wrap: nowrap; gap: 8px; margin-bottom: 20px; }
+  .calendar-view { flex: none; }
+  .calendar-view button { min-height: 40px; padding: 0 12px; }
+  .calendar-filter { flex: 1 1 auto; min-width: 0; }
+  .calendar-filter select { width: 100%; }
+  .release-row { grid-template-columns: 32px minmax(0, 1fr) auto; column-gap: 12px; min-height: 72px; }
+  .release-cover { width: 32px; }
+  .calendar-page .release-cover .cover, .dialog-content .release-cover .cover { width: 32px; height: 48px; }
+  .release-detail { flex-wrap: wrap; row-gap: 4px; }
+  .release-detail > span:first-child { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+  .release-time { font-size: 12px; }
+  .month-view-head h2 { font-size: 16px; }
+  .month-weekdays span { padding: 6px 0; text-align: center; }
+  .month-day { align-items: center; gap: 4px; min-height: 56px; padding: 6px 2px; }
+  .month-date { margin: 0; }
+  .month-release, .month-more { display: none; }
+  .month-dots { display: flex; gap: 4px; justify-content: center; }
+  .month-dots span { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
+}
+/* In the day dialog there is room for the whole episode name. */
+.dialog-content .release-detail > span:first-child { white-space: normal; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+.dialog-content .release-row { grid-template-columns: 40px minmax(0, 1fr) auto; }

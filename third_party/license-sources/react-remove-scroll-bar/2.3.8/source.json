@@ -1,0 +1,8 @@
+{
+  "package": "react-remove-scroll-bar",
+  "version": "2.3.8",
+  "git_commit": "8ca9ba5ea52de03308fe8ced94f7b159a44d28ff",
+  "license_blob": "7c08c3990396ecefd90f99ff5d9a34f26f5b5616",
+  "source": "https://github.com/theKashey/react-remove-scroll-bar/blob/8ca9ba5ea52de03308fe8ced94f7b159a44d28ff/LICENSE",
+  "reason": "npm archive omits root license; its published gitHead b3b1287 is not on GitHub, so taken from the repository default branch"
+}

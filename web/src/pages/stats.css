@@ -1,0 +1,104 @@
+/* Statistics: the range, four headline figures in one divided strip, time over the range on a
+   real axis, then the breakdowns in pairs. One 16px gutter throughout. At 1440 the canvas is
+   1100px: 4 x 275 for the strip, 2 x 542 + 16 for the pairs. */
+.stats-page .num { font-variant-numeric: tabular-nums; }
+
+.range-tabs { display: inline-flex; gap: 2px; padding: 4px; margin: 0 0 16px; border-radius: var(--pill); background: var(--surface); border: 1px solid var(--line); }
+.range-tabs button { min-height: 34px; padding: 0 16px; border-radius: var(--pill); font-size: 13px; font-weight: 500; color: var(--muted); white-space: nowrap; }
+.range-tabs button:hover { color: var(--text); }
+.range-tabs button[aria-pressed='true'] { background: color-mix(in srgb, var(--text) 12%, var(--surface)); color: var(--text); }
+
+.stat-strip { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); margin: 0 0 16px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.stat-strip > div { display: grid; align-content: start; gap: 2px; min-width: 0; padding: 16px 20px; }
+.stat-strip > div + div { border-left: 1px solid var(--line); }
+.stat-strip dt { font-size: 13px; color: var(--muted); }
+.stat-strip dd { margin: 0; }
+.stat-value { display: flex; align-items: flex-end; height: 40px; font-size: 24px; font-weight: 600; line-height: 1.1; letter-spacing: -.01em; white-space: nowrap; }
+.stat-strip .lead .stat-value { font-size: 32px; letter-spacing: -.02em; }
+.stat-delta { margin-top: 4px !important; font-size: 12px; color: var(--muted); }
+.stat-delta .num { color: var(--text); }
+.stat-foot { font-size: 12px; color: var(--muted); }
+
+.stat-card { min-width: 0; padding: 16px 20px 18px; background: var(--surface); border: 1px solid var(--line); border-radius: var(--radius); }
+.stat-card.wide { margin-bottom: 16px; }
+.stat-card-head { display: flex; justify-content: space-between; align-items: baseline; gap: 12px; margin-bottom: 12px; }
+.stat-card-head h2 { font-size: 15px; font-weight: 600; letter-spacing: 0; }
+.stat-card-head > span { font-size: 12px; color: var(--muted); white-space: nowrap; }
+.stat-card-foot { margin-top: 12px; font-size: 13px; color: var(--muted); max-width: none; }
+.stat-none { font-size: 14px; color: var(--muted); }
+/* Pairs keep their own height: a short card never stretches to its neighbour. */
+.stat-cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; align-items: start; margin-bottom: 16px; }
+
+/* The time chart: a 52px tick lane, the plot, and a date axis under it. */
+.time-chart { margin: 0; display: grid; grid-template-columns: 52px minmax(0, 1fr); grid-template-rows: 200px 26px; }
+.time-chart-y { position: relative; }
+.time-chart-y span { position: absolute; right: 10px; transform: translateY(50%); font-size: 12px; line-height: 1; color: var(--muted); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.time-chart-plot { position: relative; }
+.time-chart-rule { position: absolute; left: 0; right: 0; height: 0; border-top: 1px solid color-mix(in srgb, var(--line) 75%, transparent); }
+.time-chart-rule.base { border-top-color: var(--field-line); }
+.time-chart-bars { position: absolute; inset: 0; display: flex; align-items: flex-end; }
+.time-chart-bin { flex: 1 1 0; min-width: 0; height: 100%; display: flex; align-items: flex-end; justify-content: center; }
+.time-chart-bin > span { width: 72%; max-width: 28px; min-height: 2px; background: color-mix(in srgb, var(--accent) 78%, var(--surface)); }
+.time-chart-bin > span.peak, .time-chart-bin:hover > span { background: var(--accent); }
+.time-chart-empty { position: absolute; inset: 0; display: grid; place-items: center; font-size: 14px; color: var(--muted); }
+.time-chart-x { position: relative; grid-column: 2; }
+.time-chart-x span { position: absolute; top: 8px; transform: translateX(-50%); font-size: 12px; line-height: 1; color: var(--muted); white-space: nowrap; }
+.time-chart-x span.start { transform: none; }
+.time-chart-x span.end { transform: translateX(-100%); }
+
+/* Tables: 12px grey headers, figures right-aligned in tabular digits, no word breaks. */
+.stat-table { width: 100%; border-collapse: collapse; font-size: 14px; }
+.stat-table th, .stat-table td { padding: 8px 0; text-align: left; font-weight: 400; vertical-align: top; border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent); white-space: nowrap; }
+.stat-table :is(th, td) + :is(th, td) { padding-left: 16px; }
+.stat-table thead th { padding-top: 0; border-top: 0; font-size: 12px; color: var(--muted); }
+.stat-table tbody th { font-weight: 500; }
+.stat-table .num { text-align: right; }
+.stat-table tfoot :is(th, td) { border-top-color: var(--line); font-weight: 600; }
+.stat-table th .rank-bar { margin-top: 6px; }
+.stat-table a:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.rank-bar { display: block; height: 3px; }
+.rank-bar > span { display: block; height: 100%; border-radius: 2px; background: color-mix(in srgb, var(--muted) 45%, transparent); }
+.rank-rows { list-style: none; margin: 0; padding: 0; }
+.rank-rows li { display: grid; grid-template-columns: 18px minmax(0, 1fr) auto; column-gap: 10px; align-items: baseline; padding: 4px 0 6px; font-size: 14px; }
+.rank-rows.plain li { padding-block: 8px; border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent); }
+.rank-rows.plain li:first-child { border-top: 0; }
+.rank-index { font-size: 12px; color: var(--muted); text-align: right; }
+.rank-name { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.rank-name a:hover { text-decoration: underline; text-underline-offset: 3px; }
+.rank-value { font-size: 13px; color: var(--muted); text-align: right; white-space: nowrap; }
+.rank-rows .rank-bar { grid-column: 2 / -1; margin-top: 4px; }
+.stat-card-head .rank-more { min-height: 0; padding: 0; font-size: 13px; font-weight: 500; color: var(--text); }
+.creator-group + .creator-group { margin-top: 12px; }
+.creator-group h3 { margin: 0 0 2px; font-size: 13px; font-weight: 500; color: var(--muted); }
+
+.year-table .year-bar { width: 30%; }
+.year-table .year-bar .rank-bar { height: 4px; margin-top: 8px; }
+.year-table th a { font-weight: 600; }
+.year-list { display: none; }
+
+@media (max-width: 767px) {
+  /* The title keeps Year in Review beside it. */
+  .stats-page .page-heading { flex-direction: row; align-items: flex-start; justify-content: space-between; gap: 12px; }
+  .stats-page .page-heading .actions { flex: none; }
+  .range-tabs { display: flex; }
+  .range-tabs button { flex: 1 1 0; min-height: 44px; padding: 0 6px; }
+  .stat-strip { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .stat-strip > div { padding: 14px 16px; }
+  .stat-strip > div:nth-child(3) { border-left: 0; }
+  .stat-strip > div:nth-child(n + 3) { border-top: 1px solid var(--line); }
+  .stat-value { height: 34px; font-size: 22px; }
+  .stat-strip .lead .stat-value { font-size: 28px; }
+  .stat-card { padding: 14px 16px 16px; }
+  .stat-card-head .rank-more { min-height: 44px; margin-block: -12px; }
+  .stat-cards { grid-template-columns: minmax(0, 1fr); }
+  .time-chart { grid-template-columns: 44px minmax(0, 1fr); grid-template-rows: 180px 26px; }
+  .time-chart-y span { right: 8px; }
+  /* Year by year becomes two-line rows: the year and its time, then the other figures. */
+  .year-table { display: none; }
+  .year-list { display: block; list-style: none; margin: 0; padding: 0; }
+  .year-list li { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: baseline; column-gap: 12px; padding: 10px 0; border-top: 1px solid color-mix(in srgb, var(--line) 60%, transparent); font-size: 15px; }
+  .year-list li:first-child { border-top: 0; padding-top: 0; }
+  .year-list-name { font-weight: 600; }
+  .year-list p { grid-column: 1 / -1; margin-top: 2px; font-size: 13px; color: var(--muted); max-width: none; }
+}

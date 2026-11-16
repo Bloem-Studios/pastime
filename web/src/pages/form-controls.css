@@ -1,0 +1,12 @@
+.form-advanced { margin-block: 1rem; border-top: 1px solid var(--line); padding-top: .75rem; }
+.form-advanced > summary { cursor: pointer; min-height: 44px; display: list-item; padding: .65rem 0; font-weight: 600; }
+/* The reveal button sits inside the field, at its right end. */
+.password-control { position: relative; display: block; min-width: 0; }
+.field .password-control input { width: 100%; padding-right: 48px; }
+.password-control button { position: absolute; top: 50%; right: 1px; transform: translateY(-50%); width: 44px; height: 40px; min-height: 0; border-radius: 0 9px 9px 0; }
+.password-control button:hover:not(:disabled) { background: transparent; }
+.integration-directory { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 240px), 1fr)); gap: 8px; padding: 0; margin: 0; list-style: none; }
+.integration-directory a { display: flex; flex-direction: column; gap: 2px; height: 100%; padding: 12px 14px; border: 1px solid var(--line); border-radius: var(--radius-sm); background: var(--surface); color: var(--text); text-decoration: none; transition: border-color var(--fast) var(--ease); }
+.integration-directory a:hover { border-color: var(--field-line); }
+.integration-directory strong { font-size: 14px; font-weight: 600; }
+.integration-directory small { color: var(--muted); font-size: 13px; }
