@@ -1,10 +1,10 @@
-# Silo sync through the plain Pastime plugin
+# Silo sync
 
-This describes what the Bloem Pastime plugin (`bloem.pastime`,
+This page describes what the Bloem Pastime plugin (`bloem.pastime`,
 [bloem-plugin-pastime](https://github.com/Bloem-Studios/bloem-plugin-pastime)) calls on Pastime, how
 people connect profiles, and how sync keys behave. Bloem Server speaks Silo's watch-sync contract, which
-is why Pastime's pages and routes say "Silo". The identifiers `bloem_*` (tables) and
-`/api/v1/integrations/bloem/` (routes) keep their names.
+is why Pastime's pages and routes say "Silo". Bloem Server is built on Silo, and Pastime follows Silo's contract
+for watch providers. The tables named `bloem_*` and the routes under `/api/v1/integrations/bloem/` are Pastime's own.
 
 ## Model
 
@@ -120,7 +120,7 @@ binding or machine route can create, change or sign in with a profile login.
 
 ## Callers that send `bloem_evt_` event IDs
 
-Callers that send `bloem_evt_` event IDs and the default Go User-Agent get these answers:
+The current plugin sends the User-Agent `bloem-pastime/<version>` and `pevt_` event IDs. A caller that sends `bloem_evt_` event IDs and Go's default User-Agent (an older plugin release) gets these answers:
 `404 no_match` instead of `503 catalog_pending`, and `401` instead of `403 service_access_required`.
 `503 catalog_loading` reaches every caller. A revision below 10^12 that arrives after a stored one at
 or above it counts as newer, so a caller that sends host sequence numbers instead of Unix

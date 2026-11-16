@@ -14,7 +14,7 @@ This is an engineering inventory, not legal clearance. Source rights, fonts/artw
 
 The npm archives for `@redocly/openapi-core@1.34.20` and `change-case@5.4.4` omit their root license files. `license-sources/` retains those files from each package's declared exact Git commit, with source/blob provenance.
 
-The published `uri-js-replace@1.0.1` archive and its declared source commit omit a license file. Rather than infer terms from a license added later, the development-only Redocly AJV dependency is explicitly aliased to the original `uri-js@4.4.1`, whose BSD license is included. Native OpenAPI TypeScript generation is tested with that override. The pinned Node dependency audit reported no known vulnerabilities at the initial foundation check; repeat audits for updates.
+The published `uri-js-replace@1.0.1` archive and its declared source commit omit a license file. Rather than infer terms from a licence added later, the development-only Redocly AJV dependency is explicitly aliased to the original `uri-js@4.4.1`, whose BSD license is included. Native OpenAPI TypeScript generation is tested with that override.
 
 The platform-specific Rolldown 1.2.9 native binding archives omit their license file. The Darwin ARM64 and Linux x64 GNU fallback notices are retained from the same pinned upstream release commit, with exact provenance in each `source.json`. The generated inventory reflects installed platform dependencies; regenerate on the pinned Linux CI baseline for the committed release inventory.
 

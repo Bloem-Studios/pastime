@@ -12,11 +12,11 @@ root-run migration and backup operations. Do not give its credentials to the API
 
 ## Local dumps on hosts with their own off-host backups
 
-When the container itself is copied off-host by the hypervisor's backup system,
+When another backup system already copies the whole host or container off-host,
 `/etc/pastime/backup.env` may instead contain only `BACKUP_MODE=local`. The service
 then keeps seven custom-format dumps in `/var/backups/pastime` (mode 0700, files
 0600) and contacts no other host. The dumps are not encrypted and do not include
-`SECRET_KEY`; both rely on the host backup also capturing `/etc/pastime`. Verify a
+`SECRET_KEY`; both rely on that backup also capturing `/etc/pastime`. Verify a
 restore from the host backup before relying on it.
 
 ## Configure encrypted off-host backups
@@ -32,7 +32,7 @@ Create root-only `/etc/pastime/backup.env` (mode 0600):
 
 ```sh
 BACKUP_RECIPIENT=FULL_RECOVERY_KEY_FINGERPRINT
-BACKUP_REMOTE=backup-user@backup-host:/protected/pastime
+BACKUP_REMOTE=backup-user@backup.example:/protected/pastime
 ```
 
 Provision a restricted SSH credential and verify the backup host's SSH host key.
@@ -72,8 +72,7 @@ keyring is retained. An incorrect or missing application key makes verification
 fail. Use the checker from the same application version as the backup; apply later
 migrations only as a separate, rehearsed upgrade.
 
-Record the date, encrypted bundle hash, PostgreSQL/application versions, counts
-and exit status in your recovery records. The scripts are rehearsed with the pinned PostgreSQL 18 image, a restricted
-runtime role and an application-written encrypted secret. That rehearsal does not replace a restore test on your own host and a real off-host copy.
+Record the date, encrypted bundle hash, PostgreSQL and application versions, counts
+and exit status in your recovery records.
 
-The PostgreSQL 18 rehearsal mounts `/var/lib/postgresql` only and waits for the final TCP listener, avoiding the temporary initialization server. The checker validates notification secrets using the same purpose label as the application. Target-host acceptance and a real off-host copy still need your own testing.
+The restore container uses the pinned PostgreSQL 18 image and mounts `/var/lib/postgresql` only. It waits for the final TCP listener rather than the temporary initialization server. The checker validates notification secrets with the same purpose label as the application. The scripts are tested with a restricted runtime role and an application-written encrypted secret on synthetic data. That does not replace a restore test on your own host with a real off-host copy.

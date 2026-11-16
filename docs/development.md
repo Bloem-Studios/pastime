@@ -33,11 +33,13 @@ Liveness (`/healthz`) is independent of dependencies. Readiness (`/readyz`) requ
 
 ## Metadata providers
 
-Keyless providers (Open Library, AniList, MusicBrainz, iTunes) are always enabled. Set these to enable the others; values are never logged or returned by the API:
+Keyless providers (Open Library, Audnexus, AniList, MangaBaka, MusicBrainz, iTunes, podcast RSS, YouTube and the Grand Comics Database) are always enabled. Set these to enable the others; values are never logged or returned by the API. [Features](features.md) lists every provider and the media types it serves.
 
 | Variable | Enables |
 |---|---|
 | `TMDB_API_KEY` | Movies and TV (v3 key or v4 read token) |
+| `TVDB_API_KEY`, `TVDB_PIN` | TheTVDB series and anime (the PIN only for subscriber keys) |
+| `GCD_USERNAME`, `GCD_PASSWORD` | Optional Grand Comics Database account |
 | `IGDB_CLIENT_ID`, `IGDB_CLIENT_SECRET` | Games (Twitch application credential) |
 | `COMICVINE_API_KEY` | Comics |
 | `BGG_TOKEN` | Board games |
@@ -60,7 +62,7 @@ Enqueue a real internal database-connectivity job:
 go run ./cmd/pastime enqueue-probe local-runtime-check
 ```
 
-Reusing that key with identical intent returns the same job, not a new execution. The worker also handles catalog refreshes, scrobbles, imports, playback pushes, list syncs, notifications and exports; unknown kinds become blocked. With at least two workers, one lane is reserved for scrobbles and runtime probes. This is an operational queue test, not a fake provider import.
+Reusing that key with identical intent returns the same job, not a new execution. The worker also handles catalog refreshes, calendar title lookups, critic scores, statistics warming, scrobbles, imports, linked-service syncs, playback pushes, list syncs, notifications and exports; unknown kinds become blocked. With at least two workers, one lane is reserved for scrobbles and runtime probes. This is an operational queue test, not a fake provider import.
 
 Inspect results with the development database:
 
@@ -85,7 +87,7 @@ pnpm exec playwright install chromium
 pnpm test:browser
 ```
 
-`make test-integration` limits Go package concurrency to two because parallel isolated-schema migrations can exhaust PostgreSQL’s default lock table on many-core hosts. For a deliberately more parallel run, provision only the disposable test database with a larger `max_locks_per_transaction` (this review used 512), restart it and recheck its bound port/readiness. Do not change production settings for a test run.
+`make test-integration` limits Go package concurrency to two because parallel isolated-schema migrations can exhaust PostgreSQL’s default lock table on many-core hosts. For a deliberately more parallel run, provision only the disposable test database with a larger `max_locks_per_transaction` (for example 512), restart it and recheck its bound port/readiness. Do not change production settings for a test run.
 
 Integration tests require the exact database name `pastime_test` on loopback, validate its live identity, and create disposable schemas for synthetic fixtures. Do not point them at the development app database. Valkey tests use an expiring random test key and never flush an instance.
 
@@ -103,19 +105,19 @@ Generation uses the independently authored OpenAPI specification to produce Go D
 
 The microbenchmark measures only in-process HTTP handler/recorder overhead. It excludes real networking, authentication, domain queries and representative datasets. It is not an end-to-end performance figure.
 
-## Limits and release blockers
+## Limits
 
 - Pools are bounded per process; budget connections across API and worker replicas.
-- Migrations run explicitly. Development uses the fixture owner; the deployment installer separates maintenance and runtime roles.
-- Authentication, administration, tracking, provider adapters and disposable caches are implemented. Meilisearch and its durable indexing workflow are not implemented.
-- Native snapshots require an empty target and enforce the limits below. Private RSS feeds are unsupported.
-- System backup tooling is implemented and locally rehearsed. The base host installation does not verify current-branch upgrades, off-host transfer/retention or disk-backed failure recovery.
-- Provider compatibility has not been checked against live services. Current tests use synthetic fixtures.
-- Pastime does not aim at full compatibility with the API of Floppy, the project that inspired it, and has no migration from it.
+- Migrations run explicitly with `pastime migrate`. The installer separates maintenance and runtime database roles.
+- Search runs on PostgreSQL. There is no external search engine.
+- Native snapshots restore into an empty target and enforce the limits in the operating notes. Private RSS feeds are unsupported.
+- The backup tooling is rehearsed locally with synthetic data. The installer does not verify upgrades, off-host transfer and retention, or disk-backed failure recovery on your host.
+- Provider adapters are tested with synthetic fixtures, not live services.
+- Pastime has its own native API. It does not reproduce the API of Floppy, the project that inspired it, and it cannot migrate a Floppy database.
 
 See [configuration](configuration.md).
 
-## Review hardening configuration
+## Operating notes
 
 `TRUSTED_PROXY_CIDRS` accepts comma-separated IP network prefixes. It is empty by default: forwarding headers are ignored. When the socket peer is trusted, the server walks `X-Forwarded-For` from right to left and stops at the first untrusted address. Configure the reverse proxy to append the actual peer address; do not trust every network.
 
@@ -182,14 +184,14 @@ and keeps restored lists private. It restores library content, not credentials, 
 collaborators, public share links or external sync configuration. Catalog identities are
 resolved through normal provider paths; unavailable references or episode orders fail
 without partially restoring personal data. The same file can be retried without
-repeating its effects. Restore does not overwrite subsequent edits. Legacy entry-only
-exports remain supported, but legacy files containing manual entries fail explicitly
-because those files omitted fields needed for a complete restore.
+repeating its effects. Restore does not overwrite subsequent edits. Older entry-only
+exports are accepted, but a file of that kind that contains manual entries fails
+explicitly because it lacks the fields a complete restore needs.
 
 JSONL output is streamed row by row, with limits of 64 MiB and 100,000 records. Native
 uploads also accept gzip with the same decompressed limit. ZIP imports reject duplicate
 basenames, more than 1,000 files, and expansion above 64 MiB; CSV parsing caps rows at
-100,000. The legacy CSV/Letterboxd export path rejects a 500-entry batch above 100,000
+100,000. The CSV and Letterboxd export path rejects a 500-entry batch above 100,000
 plays instead of exhausting memory. Limits return failures, never successful truncation.
 
 Linked playback pushes run independently from inbound imports. Per-play delivery
@@ -205,11 +207,11 @@ Apple podcast-directory record. Search the public podcast by name first. Private
 addresses are unsupported: neither stripping query parameters nor guessing token-like
 paths is a sufficient privacy boundary. Reader sync rejects older timestamps and
 conflicting equal-timestamp positions; an explicitly newer timestamp permits a rewind.
-Legacy reader clients that omit timestamps retain arrival-order behavior.
+Reader clients that omit timestamps are applied in arrival order.
 
 See [recovery procedures](../deploy/lxc/RECOVERY.md)
 for encrypted database/key bundles, off-host copies, isolated restore checks,
 and the maintenance/runtime database-role split. Backup health is unverified until
 you configure and demonstrate off-host recovery on your installation.
 
-See [September capabilities](september-capabilities.md) for the personal-data snapshot fields, provider adapters, background bounds and supported import columns.
+See [features](features.md) for the snapshot fields, provider adapters, background work and supported import columns.

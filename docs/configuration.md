@@ -44,9 +44,9 @@ For proxy trust rules, key rotation and change-feed clients, see [development](d
 | `LASTFM_API_KEY` | Last.fm application credential |
 | `STEAM_API_KEY` | Steam application credential |
 
-Open Library, AniList, MangaBaka, the Grand Comics Database, YouTube (oEmbed), MusicBrainz and iTunes do not require instance keys in this implementation. Personal service credentials are configured through the application and stored encrypted. Meilisearch is not supported.
+Open Library, Audnexus, AniList, MangaBaka, the Grand Comics Database, YouTube (oEmbed), MusicBrainz, iTunes and podcast RSS need no instance keys. Personal service credentials are entered in the application and stored encrypted with `SECRET_KEY`. Search runs on PostgreSQL; there is no external search engine.
 
-See [September capabilities](september-capabilities.md) for Mylar3, WeTrakr, Navidrome, quota behavior and connection health.
+See [features](features.md) for what each provider and linked service does, and for the OpenCritic quota.
 
 ## Year in Review notices
 
@@ -59,7 +59,7 @@ Set both or neither. The address must be https and carry no credentials or query
 
 ## Household and native Bloem tracking
 
-Profile selection and native enrollment authority are database-backed, not environment-variable API keys. See [managed tracking](managed-tracking.md). Native provisioning credentials are backend-only and distinct from personal sessions/tokens. Configuring ordinary Silo/Bloem service adapters does not enable automatic managed enrollment.
+Profile selection and native enrollment authority are stored in the database, not in environment variables. See [managed tracking](managed-tracking.md). Native provisioning credentials are for backend use only and are distinct from personal sessions and tokens. The command `pastime-bloem-register` reads the same runtime environment as the server.
 
 ## Development and verification tools
 
@@ -69,6 +69,7 @@ Profile selection and native enrollment authority are database-backed, not envir
 | `PASTIME_TEST_DATABASE_URL` | Integration/browser setup; isolated loopback database named exactly `pastime_test` |
 | `PASTIME_TEST_VALKEY_URL` | Integration fixtures; random expiring keys, no global flush |
 | `PASTIME_REQUIRE_INTEGRATION` | `1` makes missing fixtures fail; set by `make test-integration` |
+| `PASTIME_USABILITY_BASE_URL` | Selects the listener the usability browser suite tests; see [usability acceptance](../tests/browser/USABILITY.md) |
 | `PASTIME_BROWSER_RUNTIME_DATABASE_URL` | Optional restricted-role browser API connection after maintenance setup; grants must already exist |
 | `PERF_DATABASE_URL` | Store benchmark fixture; dedicated loopback `pastime_perf`; seeding is destructive to that fixture |
 | `PERF_USER` | Benchmark account selector; default `perf_user_1`, or `perf_mega` for the large fixture |

@@ -3,20 +3,59 @@
 > [!CAUTION]
 > **Offered without support.** Pastime is provided as-is, with no support of any kind. Issues are turned off, questions go unanswered, and pull requests are not accepted: they are closed without review. You are free to fork it under the AGPL v3.
 
-Pastime is a self-hosted media tracker for what you watch, read, play and listen to: films, shows, anime, books, comics, games, board games, podcasts and music. It keeps a personal library with status, ratings, notes, episode progress, repeat cycles and history, plus lists, statistics, release calendars and imports from other trackers. One installation can serve a household, with a separate tracking profile for each person. It is for people who want to host their own tracker, and it has an optional link to [Bloem Server](https://github.com/Bloem-Studios/bloem-server) so that what a profile watches there is recorded here.
+Pastime is a self-hosted media tracker for what you watch, read, play and listen to: films, shows, anime, books, manga, comics, games, board games, podcasts, audiobooks, videos and music. It keeps a personal library with status, ratings, notes, episode progress, repeat cycles and history, plus lists, statistics, release calendars and imports from other trackers. One installation can serve a household, with a separate tracking profile for each person. It is for people who want to host their own tracker. It also links to [Bloem Server](https://github.com/Bloem-Studios/bloem-server), which is built on the open-source [Silo](https://github.com/Silo-Server/silo-server) media server, so that what a profile watches there is recorded here.
 
 Pastime has no stable release yet. The API reports its stage as `preview`, and the schema may change between versions. Back up before every upgrade.
 
 It is written in Go (chi, pgx, Goose) with a React and TypeScript web app that is embedded in the binary. PostgreSQL holds all durable state. Valkey is an optional cache and can be lost at any time.
 
-## What it does
+## Features
 
-- Library views, episode tracking, ratings with history, tags, owned copies, custom fields, and smart or collaborative lists with public, unlisted and private sharing.
-- Metadata from TMDB, TheTVDB, Open Library, AniList, MangaBaka, MusicBrainz, iTunes, IGDB, Comic Vine, the Grand Comics Database, BoardGameGeek and YouTube. Providers that need a key are off until you set one (see [configuration](docs/configuration.md)). Without a provider, search uses the local catalog.
-- Imports and links to other services, such as Trakt, Letterboxd, Jellyfin, Plex, Radarr, Sonarr, Audiobookshelf, Navidrome, ListenBrainz and KOReader sync. A passing test does not mean a live service still behaves the same way, because the tests use synthetic fixtures.
-- Local accounts with invitations, optional public registration, scoped API tokens, OpenID Connect sign-in, and authenticator-based password recovery.
-- Native exports and restore, CSV exports, scheduled snapshots, and encrypted database backup scripts.
-- A responsive web app in English, German, French, Dutch and Spanish, and an OpenAPI description with a self-hosted Swagger UI at `/docs/` for administrators.
+The detailed reference is [docs/features.md](docs/features.md).
+
+**Tracking**
+- Twelve media types: movies, series, anime, books, manga, comics, games, board games, podcasts, music, audiobooks and videos.
+- Status, progress, repeat cycles, skipped episodes, play history, check-ins that finish by themselves when a film or episode ends, and a status history for each title.
+- Ratings on a 10, 5 or 100 scale (or off), with dates, plus ratings for single episodes.
+- Tags, owned copies (physical or digital) with custom fields, editions, alternate episode orders, your own cover art, and a "Correct the match" tool that moves a title to another catalog record or provider.
+- Saved library views, bulk actions on up to 200 titles, a configurable Home page and Discover suggestions.
+
+**Lists and sharing**
+- Manual and smart lists, tier boards that export as an image, and collaborative lists with editors and viewers.
+- Private, unlisted (expiring link) and public lists, with JSON, RSS and CSV output, and an optional public profile.
+- Lists that follow a public Trakt or MDBList list, and export of a list to Trakt.
+- Recommendations between people on the same server.
+
+**Metadata**
+- TMDB, TheTVDB, AniList, MangaBaka, Open Library, Audnexus, IGDB, BoardGameGeek, Comic Vine, the Grand Comics Database, MusicBrainz, iTunes, podcast RSS and YouTube. Providers that need a key are off until you set one. Without a provider, search uses the local catalog.
+- Cast, crew and studio pages, regional movie release dates and cached OpenCritic scores for games (optional).
+
+**Calendar, statistics and notices**
+- A release calendar with a private `.ics` subscription link.
+- Release notices to webhooks, ntfy, Gotify, Discord or Apprise.
+- Statistics (time, streaks, genres, people, studios, creators, ratings) and a Year in Review for any year.
+
+**Imports, exports and linked services**
+- File imports from Trakt, Letterboxd, IMDb, Goodreads, StoryGraph, AniList, Yamtrack, Grouvee, TV Time, CLZ, Playnite, WeTrakr and generic CSV, with an unmatched-titles review and rollback.
+- Linked services that sync on a schedule: Trakt, Simkl, MyAnimeList, AniList, Kitsu, Hardcover, Steam, PlayStation, Xbox, BoardGameGeek, Jellyfin, Emby, Plex, Audiobookshelf, Last.fm, ListenBrainz, Koito, gPodder, Pocket Casts, Stremio, Storyteller, Radarr, Sonarr, Komga, Kavita, Mylar3 and Kapowarr.
+- Webhooks from Plex, Jellyfin, Emby, Kodi and Overseerr or Jellyseerr; a ListenBrainz-compatible endpoint for Navidrome; a KOReader sync server.
+- Native JSONL export and restore, CSV and Letterboxd exports, and scheduled snapshots.
+
+**Accounts and administration**
+- Local accounts with invitations, optional public registration, OpenID Connect sign-in, authenticator-based password recovery, sessions, scoped API tokens and device-code sign-in for TV and phone apps.
+- Household profiles: several tracking profiles under one account, each with its own library, and optional profile logins.
+- An administration console with a dashboard, jobs, providers, catalog, imports, users, invitations, an audit log and configuration checks.
+- An OpenAPI description with a Swagger UI at `/docs/` for administrators, and an MCP endpoint for AI assistants.
+
+**Bloem Server**
+- Watch sync, favourites, watchlist and ratings with Bloem Server through the Pastime plugin, household profile provisioning, and Bloem availability, calendar and recommendations shown in Pastime. See [Connecting to Bloem Server](#connecting-to-bloem-server).
+
+**Platform**
+- A responsive web app in English, German, French, Dutch and Spanish, embedded in a single Go binary.
+- PostgreSQL for all durable state, including the job queue. Valkey is an optional cache.
+- Encrypted off-host backup scripts and a restore check.
+
+Adapters are tested with synthetic fixtures built from each service's published API, so a passing test does not show that a live service still behaves the same way.
 
 ## Running it
 
@@ -122,4 +161,4 @@ Report vulnerabilities privately through GitHub's private vulnerability reportin
 
 ## Licence
 
-Pastime is licensed under the GNU Affero General Public License, version 3 only (AGPL-3.0-only). See [LICENSE](LICENSE). Dependencies and bundled assets keep their own licences: see [third_party/README.md](third_party/README.md), `third_party/NOTICES.txt`, and `pastime licenses`. The [provenance notes](docs/provenance.md) describe how the code relates to Floppy and Silo.
+Pastime is licensed under the GNU Affero General Public License, version 3 only (AGPL-3.0-only). See [LICENSE](LICENSE). Dependencies and bundled assets keep their own licences: see [third_party/README.md](third_party/README.md), `third_party/NOTICES.txt`, and `pastime licenses`. The [licence and authorship notes](docs/provenance.md) describe how the code relates to Floppy and Silo, whose design informed it.
