@@ -8,7 +8,7 @@ Where to start:
 | [Configuration](configuration.md) | Runtime, provider and test environment variables |
 | [Deployment](../deploy/lxc/README.md) | Single-host installer, file layout and maintenance |
 | [Recovery](../deploy/lxc/RECOVERY.md) | Encrypted backups, key rotation and isolated restore checks |
-| [Provenance](provenance.md) | Licence, independent authorship and reuse rules |
+| [Licence and authorship](provenance.md) | Licence, independent authorship and reuse rules |
 | [Third-party inventory](../third_party/README.md) | Exact dependency versions and retained notices |
 
 Features and integrations:

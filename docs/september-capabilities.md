@@ -1,17 +1,17 @@
 # September capabilities
 
-Implemented independently following a behavioural review of Floppy through commit `da4fa955b1d001ac09d47e183b2e56af2909ca13`. This is a native implementation, not source parity. No Floppy/Silo code, assets, tests or Git history were imported.
+These capabilities are native to Pastime, not source parity. No Floppy or Silo code, assets, tests or Git history are included.
 
 ## Library and personal evidence
 
 - **Saved views:** Library → Saved views stores filters, sort order and grid/list layout. Views appear in navigation and can be edited, reordered or deleted. Each account has up to 100; updates/deletes require the current version. Reordering requires the full current set. Views remain private.
 - **Rating dates:** `scored_at` records actual rating changes, including clearing a rating. Unrelated edits and replay do not restamp it. Existing unknown dates remain unknown; supported dated imports and native restores preserve supplied historical evidence.
-- **Episode ratings:** Rate episodes from a series title or library detail; since the [October additions](october-capabilities.md) an episode need not be watched. The derived mean counts each rated episode once across repeat cycles. Unrated episodes do not enter the mean; the UI shows rated and watched counts. Season selection filters the aggregate. This does not overwrite your explicit series rating.
-- **Status history:** Detail pages show previous/new status, timestamp and source/operation. History begins when migration 28 is applied; earlier changes are not invented.
+- **Episode ratings:** Rate episodes from a series title or library detail; an episode need not be watched (see [October capabilities](october-capabilities.md)). The derived mean counts each rated episode once across repeat cycles. Unrated episodes do not enter the mean; the UI shows rated and watched counts. Season selection filters the aggregate. This does not overwrite your explicit series rating.
+- **Status history:** Detail pages show previous/new status, timestamp and source/operation. Only changes Pastime recorded appear; earlier changes are not invented.
 - **Intent protection:** Automatic imports and scrobbles preserve paused, dropped and rated-only states. Automatic reprojection preserves explicitly completed titles. Automatic show/anime completion requires a positive terminal production status. Deleting a catalog entry records a durable marker; later bulk sync and request planning cannot recreate it. Explicitly adding it again clears the marker. A genuinely newer completed scrobble may recreate it; older playback cannot.
 - **Collection search:** Owned supports a title/issue/edition query with private ownership checks, cursor pagination and filtered totals. Library's existing owned filter and shared cards continue to work for collection-only use without watch history.
 
-Native exports now write **version 3** and include saved views, rating timestamps, episode ratings, status history and deletion markers. Restore accepts versions 2 and 3 into an empty personal library/organization; imported list sharing stays private. Credentials and integration configuration remain excluded. Limits remain 64 MiB and 100,000 records.
+Native exports write **version 3** and include saved views, rating timestamps, episode ratings, status history and deletion markers. Restore accepts versions 2 and 3 into an empty personal library/organization; imported list sharing stays private. Credentials and integration configuration remain excluded. Limits remain 64 MiB and 100,000 records.
 
 ## Mylar3
 
@@ -60,9 +60,9 @@ The reserved foreground worker lane handles scrobbles, ListenBrainz submissions 
 
 ## Protocol evidence
 
-- [Mylar3 API documentation](https://github.com/mylar3/mylar3/wiki/API-Documentation), plus response-field inspection at revision [`cdc94a44425b6f3f9cdb9b6e5f9d88ae2fee3316`](https://github.com/mylar3/mylar3/blob/cdc94a44425b6f3f9cdb9b6e5f9d88ae2fee3316/mylar/api.py): `success`/`data`, index IDs, issues/annuals and credential error semantics. No implementation was copied.
-- [ListenBrainz submission metadata](https://github.com/metabrainz/listenbrainz-server/blob/master/docs/users/json.rst) and [Navidrome configuration](https://www.navidrome.org/docs/usage/configuration/options/), accessed 2026-09-27.
-- [OpenCritic's RapidAPI listing](https://rapidapi.com/opencritic-opencritic-default/api/opencritic-api): `/game/search` and `/game/{id}`, accessed 2026-09-27.
-- [WeTrakr product documentation](https://wetrakr.com/), accessed 2026-09-27; export-column limitation recorded above.
+- [Mylar3 API documentation](https://github.com/mylar3/mylar3/wiki/API-Documentation), plus its response fields: `success`/`data`, index IDs, issues/annuals and credential error semantics. No implementation was copied.
+- [ListenBrainz submission metadata](https://github.com/metabrainz/listenbrainz-server/blob/master/docs/users/json.rst) and [Navidrome configuration](https://www.navidrome.org/docs/usage/configuration/options/).
+- [OpenCritic's RapidAPI listing](https://rapidapi.com/opencritic-opencritic-default/api/opencritic-api): `/game/search` and `/game/{id}`.
+- [WeTrakr product documentation](https://wetrakr.com/); the export-column limitation is described above.
 
-No dependency was added; existing exact-version dependency notices and licenses are unchanged. Tests use synthetic fixtures; none of these integrations has been checked against a live service.
+Dependency notices are in the [dependency inventory](../third_party/README.md). Tests use synthetic fixtures; none of these integrations has been checked against a live service.

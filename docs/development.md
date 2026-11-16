@@ -99,15 +99,15 @@ make build
 make bench
 ```
 
-Generation uses the independently authored OpenAPI specification to produce Go DTOs and TypeScript API types. Route/spec and response/schema tests cover the current operations. The React application consumes the generated TypeScript schema. `make check-generated` also verifies translation coverage; all four translated catalogs have 1,938 strings at this checkpoint.
+Generation uses the independently authored OpenAPI specification to produce Go DTOs and TypeScript API types. Route/spec and response/schema tests cover the current operations. The React application consumes the generated TypeScript schema. `make check-generated` also verifies translation coverage; every string is translated in all four translated catalogs.
 
 The microbenchmark measures only in-process HTTP handler/recorder overhead. It excludes real networking, authentication, domain queries and representative datasets. It is not an end-to-end performance figure.
 
 ## Limits and release blockers
 
 - Pools are bounded per process; budget connections across API and worker replicas.
-- Migrations run explicitly. Development uses the fixture owner; the deployment installer separates maintenance and runtime roles, verified in the isolated rehearsal.
-- Authentication, administration, tracking, provider adapters and disposable caches are implemented. Meilisearch and its durable indexing workflow remain planned.
+- Migrations run explicitly. Development uses the fixture owner; the deployment installer separates maintenance and runtime roles.
+- Authentication, administration, tracking, provider adapters and disposable caches are implemented. Meilisearch and its durable indexing workflow are not implemented.
 - Native snapshots require an empty target and enforce the limits below. Private RSS feeds are unsupported.
 - System backup tooling is implemented and locally rehearsed. The base host installation does not verify current-branch upgrades, off-host transfer/retention or disk-backed failure recovery.
 - Provider compatibility has not been checked against live services. Current tests use synthetic fixtures.
@@ -146,7 +146,7 @@ separately. The synthetic slow/503 test verifies overload accounting; it is not 
 Pastime throughput measurement. Provider outages and worker shutdowns should be
 injected only into task-owned fixtures and reported as separate scenarios.
 
-Notification release claims and destination records now commit together. Failed or still-leased
+Notification release claims and destination records commit together. Failed or still-leased
 HTTP deliveries remain pending and are retried separately from successful
 recipients. Both notification and playback delivery are at least once: the remote
 acknowledgement and PostgreSQL receipt cannot commit atomically. Playback receipts
@@ -154,10 +154,9 @@ are scoped to the linked configuration generation and use play creation time, so
 backdated entries are eligible. Missing remote titles remain pending for a later
 sync. Do not describe either integration as exactly-once delivery.
 
-Unlisted list URLs now use a random share token, expire after 90 days and can be
+Unlisted list URLs use a random share token, expire after 90 days and can be
 renewed from the sharing panel. Renewal or private visibility revokes the previous
-link. Existing guessable unlisted slug URLs stop working after migration; owners
-must copy the new link. Public list pages, JSON, RSS and CSV have cursor pagination;
+link. Public list pages, JSON, RSS and CSV have cursor pagination;
 RSS/CSV expose continuation through the `Link` header. Public responses are not
 cached so revocation is checked on every request. A frozen list copies membership
 and list annotations into a new private manual list; it does not freeze shared
@@ -173,7 +172,7 @@ Deployment/recovery procedures are in `deploy/lxc/RECOVERY.md`.
 
 ### Native transfers and integration boundaries
 
-Native JSONL exports now use version 3 (restore also accepts version 2) and require both `library:read` and `lists:read`;
+Native JSONL exports use version 3 (restore also accepts version 2) and require both `library:read` and `lists:read`;
 native imports require `library:write` and `lists:write`. They include manual and catalog-linked entries,
 cycles/dates, edition selections, plays (including unmapped plays and runtime evidence),
 skips, copies/custom fields, tags, lists/membership notes, activity and resume positions.
@@ -213,4 +212,4 @@ for encrypted database/key bundles, off-host copies, isolated restore checks,
 and the maintenance/runtime database-role split. Backup health is unverified until
 you configure and demonstrate off-host recovery on your installation.
 
-See [September capabilities](september-capabilities.md) for the new personal-data snapshot fields, provider adapters, background bounds and supported import columns.
+See [September capabilities](september-capabilities.md) for the personal-data snapshot fields, provider adapters, background bounds and supported import columns.

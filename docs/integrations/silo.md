@@ -16,7 +16,7 @@ plugin sends the binding's source IDs with every event; Pastime refuses events f
 Bindings come from two places:
 
 - **Provisioned** (`origin='provisioned'`): created through `profiles:provision` with the
-  server's own account and profile IDs (the older provisioning route, still supported).
+  server's own account and profile IDs (the provisioning route).
 - **Self service** (`origin='self_service'`): created on the Connect Silo page for a profile that
   has no binding yet, under the person's existing source account in that instance or a new one
   with source ID `pastime-account-<user id>`; the profile's source ID is
@@ -118,9 +118,9 @@ every profile's key. Turning a profile login off, or resetting its password, end
 browser sessions only: the profile's key keeps working until it is revoked here. No sync key,
 binding or machine route can create, change or sign in with a profile login.
 
-## Older callers
+## Callers that send `bloem_evt_` event IDs
 
-Callers that send `bloem_evt_` event IDs and the default Go User-Agent keep the older answers:
+Callers that send `bloem_evt_` event IDs and the default Go User-Agent get these answers:
 `404 no_match` instead of `503 catalog_pending`, and `401` instead of `403 service_access_required`.
 `503 catalog_loading` reaches every caller. A revision below 10^12 that arrives after a stored one at
 or above it counts as newer, so a caller that sends host sequence numbers instead of Unix

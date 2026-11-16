@@ -25,7 +25,7 @@ Install GnuPG and OpenSSH client tools on the backup host. Generate a recovery k
 on a separate recovery machine. Keep its private key and recovery instructions
 off-host; import only the public key into `/etc/pastime/backup-keyring` (root-owned,
 mode 0700). Record the exact host package versions and licenses with the deployment
-inventory. The rehearsal used GnuPG 2.4.7; its notices are in
+inventory. The rehearsal uses GnuPG 2.4.7; its notices are in
 `third_party/host-tools/`.
 
 Create root-only `/etc/pastime/backup.env` (mode 0600):
@@ -73,7 +73,7 @@ fail. Use the checker from the same application version as the backup; apply lat
 migrations only as a separate, rehearsed upgrade.
 
 Record the date, encrypted bundle hash, PostgreSQL/application versions, counts
-and exit status in your recovery records. The scripts were rehearsed with the pinned PostgreSQL 18 image, a restricted
+and exit status in your recovery records. The scripts are rehearsed with the pinned PostgreSQL 18 image, a restricted
 runtime role and an application-written encrypted secret. That rehearsal does not replace a restore test on your own host and a real off-host copy.
 
 The PostgreSQL 18 rehearsal mounts `/var/lib/postgresql` only and waits for the final TCP listener, avoiding the temporary initialization server. The checker validates notification secrets using the same purpose label as the application. Target-host acceptance and a real off-host copy still need your own testing.

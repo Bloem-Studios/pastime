@@ -55,9 +55,9 @@ A provisioning mapping returns `connection_ready=false`; readiness is establishe
 
 Snapshots expire after ten minutes, accept at most sixteen concurrent snapshots, one hundred profiles per page and one thousand pages per snapshot. Completion requires the final page receipt and the entire accepted cursor chain. It archives absent integration-owned additional profiles only below the accepted revision ceiling, preserving newer mappings, default profiles and independent login authority. An empty snapshot establishes no revision ceiling and does not archive unknown mappings.
 
-## Verified integration and rollout boundaries
+## Integration and rollout boundaries
 
-The coordinated Bloem host and real plugin acceptance uses the actual Pastime HTTP API with isolated PostgreSQL schemas and synthetic catalog metadata. It verifies one account with three independent profiles, per-profile encrypted credentials, replay/history deduplication, stale resume protection, later-added profiles, rename/deletion, cancellation/reactivation, restart convergence and revoked grants. The host's fresh migrations and pinned Silo switching check also pass. This establishes isolated integration behavior, not live provider/catalog correctness or production readiness.
+The acceptance tests run a Bloem host and the real plugin against the actual Pastime HTTP API with isolated PostgreSQL schemas and synthetic catalog metadata. They cover one account with three independent profiles, per-profile encrypted credentials, replay and history deduplication, stale resume protection, later-added profiles, rename and deletion, cancellation and reactivation, restart convergence and revoked grants. They show isolated integration behavior, not live provider or catalog correctness or production readiness.
 
 User-managed exclusion remains separate work. Automatic account creation and tracking do not by themselves grant a user login ownership: only a verified sign-in claims or links an account, and email is never proof.
 

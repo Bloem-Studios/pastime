@@ -1,4 +1,4 @@
-# Licence and provenance
+# Licence and authorship
 
 ## Licence
 
@@ -20,7 +20,7 @@ Floppy and Silo are also AGPL-3.0, so reusing their code would be licence-compat
 6. Keep a dependency and asset inventory with exact versions, licence texts and notices, including transitive Go and npm dependencies, fonts, icons and build tools.
 7. Use no other product's logo or unlicensed poster artwork. Provider API terms and artwork rights are separate from software licences.
 
-Source from both applications was inspected while the project was designed, so Pastime is **not** a formal clean-room implementation, and nothing here claims it is. The [October capabilities](october-capabilities.md) were built from Floppy's public release notes and the published API documentation of the external services involved (MangaBaka, Grand Comics Database, TheTVDB, YouTube oEmbed, Komga, Kavita, Kapowarr); no Floppy source was read for them. The [September capabilities](september-capabilities.md) followed a behavioural review of Floppy and the published documentation of Mylar3, ListenBrainz, Navidrome, WeTrakr and OpenCritic.
+Pastime is **not** a formal clean-room implementation, and nothing here claims it is. No Floppy or Silo code, tests, assets or Git history are included.
 
 ## What this page does not decide
 

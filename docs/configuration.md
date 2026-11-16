@@ -22,7 +22,6 @@ The API and worker read environment variables at startup; they do not automatica
 | `NOTIFY_ALLOW_PRIVATE` | Only literal `true` allows notification delivery to private network destinations |
 | `SERVICES_ALLOW_PRIVATE` | Only literal `true` allows members to link private-network services; administrators have separate permission |
 | `SILO_SYNC_REQUESTS_PER_MINUTE` | 600; allowed range 60–100000. Requests per minute for each Silo sync key (one connected Silo profile); all sync traffic from one address has a ceiling of 6,000 per minute, and an address that sent 120 keys Pastime never issued in a minute is refused until the minute ends |
-| `GARDEN_NOTICES_URL`, `GARDEN_NOTICES_TOKEN` | Optional; set both or neither. For hosted deployments only: the https address of an external customer-notice service that accepts these notices (no query string or credentials in the address), and its bearer token. From 27 December 09:00 UTC the worker posts each account with service access and activity that year its Year in Review numbers (year, minutes, titles), once, and the service emails the customer; Pastime stores no email addresses. Leave both unset to send nothing. `pastime review-notices check [year]` runs the same selection as a dry run that sends and records nothing |
 
 For proxy trust rules, key rotation and change-feed clients, see [development](development.md). Keep all key generations needed by retained ciphertext and backups. Configuring a destination is not proof of reachability or successful delivery.
 
@@ -45,13 +44,13 @@ For proxy trust rules, key rotation and change-feed clients, see [development](d
 | `LASTFM_API_KEY` | Last.fm application credential |
 | `STEAM_API_KEY` | Steam application credential |
 
-Open Library, AniList, MangaBaka, the Grand Comics Database, YouTube (oEmbed), MusicBrainz and iTunes do not require instance keys in this implementation. Personal service credentials are configured through the application and stored encrypted. No Meilisearch variables are implemented; optional Meilisearch support is not built yet.
+Open Library, AniList, MangaBaka, the Grand Comics Database, YouTube (oEmbed), MusicBrainz and iTunes do not require instance keys in this implementation. Personal service credentials are configured through the application and stored encrypted. Meilisearch is not supported.
 
 See [September capabilities](september-capabilities.md) for Mylar3, WeTrakr, Navidrome, quota behavior and connection health.
 
 ## Household and native Bloem tracking
 
-Profile selection and native enrollment authority are database-backed, not new environment-variable API keys. See [managed tracking](managed-tracking.md). Native provisioning credentials are backend-only and distinct from personal sessions/tokens. Configuring ordinary Silo/Bloem service adapters does not enable automatic managed enrollment.
+Profile selection and native enrollment authority are database-backed, not environment-variable API keys. See [managed tracking](managed-tracking.md). Native provisioning credentials are backend-only and distinct from personal sessions/tokens. Configuring ordinary Silo/Bloem service adapters does not enable automatic managed enrollment.
 
 ## Development and verification tools
 

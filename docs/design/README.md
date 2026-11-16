@@ -1,6 +1,6 @@
 # Interface design
 
-Pastime uses an independently authored, artwork-led interface informed by cinema-oriented media clients. No Silo source, branding or assets are imported. See the [provenance policy](../provenance.md).
+Pastime uses an independently authored, artwork-led interface informed by cinema-oriented media clients. No Silo source, branding or assets are imported. See the [authorship policy](../provenance.md).
 
 - **Colours.** Dark chrome uses charcoal (`#101416`), layered surfaces, teal primary actions (`#00d8ac`) and cyan focus/brand accents (`#06bce0`). Artwork supplies additional colour. The light theme uses a pale ground and darker teal/cyan for contrast. Dark is the default; people can choose light or follow the system.
 - **Type:** Outfit (self-hosted, OFL). Hierarchy comes from size and colour, not weight: headings at 600 at most, sentence-case labels without wide tracking, and muted metadata. Headings and empty-state titles carry no trailing full stop.

@@ -1,6 +1,6 @@
 # October capabilities
 
-Implemented independently from the behavior described in Floppy's public release notes v26.9.24, v26.10.1 and v26.10.8. This is a native implementation, not source parity: no Floppy or Silo code, tests, assets or history were imported.
+These capabilities are native to Pastime, not source parity. No Floppy or Silo code, tests, assets or history are included.
 
 ## Ratings
 
@@ -30,7 +30,7 @@ Search accepts an optional `provider`; `GET /api/v1/catalog/providers` lists eac
 
 ## Moving between providers
 
-"Correct the match" can search another provider, for example to move a show from TMDB to TheTVDB. Before matching, the new record's episodes are loaded for every season the entry has history, ratings or skips in. The preview now counts episode ratings that move or are dropped and lists up to 50 tracked or rated episodes the new record lacks. Episode ratings follow their episodes on remap; the title's own rating, notes and status always stay.
+"Correct the match" can search another provider, for example to move a show from TMDB to TheTVDB. Before matching, the new record's episodes are loaded for every season the entry has history, ratings or skips in. The preview counts episode ratings that move or are dropped and lists up to 50 tracked or rated episodes the new record lacks. Episode ratings follow their episodes on remap; the title's own rating, notes and status always stay.
 
 ## Videos
 
