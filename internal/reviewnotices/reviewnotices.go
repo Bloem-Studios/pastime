@@ -1,14 +1,14 @@
-// Package reviewnotices tells the customer system (Bloem Garden) how each
+// Package reviewnotices tells the customer-notice service how each
 // customer's year went, once a year, so it can email them their Year in Review.
-// Pastime stores no email addresses: Garden finds the customer by the sign-in
+// Pastime stores no email addresses: the service finds the customer by the sign-in
 // subject of their paid access, honours their choice about such emails, and
 // writes the email itself. Pastime sends only the year, the minutes and the
 // number of titles.
 //
 // From 27 December 09:00 UTC the worker records one row per customer with
 // access and activity in the year (review_notices), then sends each row once,
-// retrying temporary failures hourly. Without GARDEN_NOTICES_URL and
-// GARDEN_NOTICES_TOKEN nothing is sent.
+// retrying temporary failures hourly. Without REVIEW_NOTICES_URL and
+// REVIEW_NOTICES_TOKEN nothing is sent.
 package reviewnotices
 
 import (
@@ -28,10 +28,10 @@ import (
 // maxAttempts is how often a temporary failure is retried before giving up.
 const maxAttempts = 5
 
-// ErrUnauthorized means Garden refused the token; nothing more is sent this run.
+// ErrUnauthorized means the notice service refused the token; nothing more is sent this run.
 var ErrUnauthorized = errors.New("reviewnotices: the customer system refused the token")
 
-// Sender sends the notices. URL is Garden's hook
+// Sender sends the notices. URL is the service's hook
 // (https://…/api/v1/hooks/trackers/<operator>/notices) and Token its bearer token.
 type Sender struct {
 	Pool   *pgxpool.Pool
@@ -217,8 +217,8 @@ type notice struct {
 	DryRun  bool   `json:"dry_run,omitempty"`
 }
 
-// Post sends one notice and maps Garden's answer to a final status: sent,
-// opted_out, unknown (no customer signs in with the subject), refused (Garden
+// Post sends one notice and maps the service's answer to a final status: sent,
+// opted_out, unknown (no customer signs in with the subject), refused (the service
 // rejected the notice) or, for a dry run, would_send. An empty status with an
 // error is temporary and may be retried; ErrUnauthorized stops the run.
 func (s Sender) Post(ctx context.Context, year int, x Summary, dryRun bool) (string, error) {
@@ -275,7 +275,7 @@ func (s Sender) Post(ctx context.Context, year int, x Summary, dryRun bool) (str
 func (s Sender) Check(ctx context.Context, year int) (Result, error) {
 	out := Result{}
 	if !s.Configured() {
-		return out, errors.New("set GARDEN_NOTICES_URL and GARDEN_NOTICES_TOKEN first")
+		return out, errors.New("set REVIEW_NOTICES_URL and REVIEW_NOTICES_TOKEN first")
 	}
 	summaries, err := s.Summaries(ctx, year)
 	if err != nil {

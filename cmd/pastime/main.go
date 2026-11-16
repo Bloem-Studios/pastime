@@ -105,7 +105,7 @@ func run(ctx context.Context, args []string, logger *slog.Logger) error {
 		logger.Info("owner created", "user_id", u.ID)
 		return nil
 	}
-	reviews := reviewnotices.Sender{Pool: pool, URL: c.GardenNoticesURL, Token: c.GardenNoticesToken}
+	reviews := reviewnotices.Sender{Pool: pool, URL: c.ReviewNoticesURL, Token: c.ReviewNoticesToken}
 	if command == "review-notices" {
 		year := time.Now().UTC().Year()
 		if len(args) == 3 {

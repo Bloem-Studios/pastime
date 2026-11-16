@@ -27,8 +27,8 @@ func TestLoad(t *testing.T) {
 		{"SILO_SYNC_REQUESTS_PER_MINUTE", "fast"},
 		{"LISTEN_ADDR", "not-an-address"},
 		{"VALKEY_URL", "https://test-secret@example.com"},
-		{"GARDEN_NOTICES_TOKEN", "test-secret"},
-		{"GARDEN_NOTICES_URL", "https://garden.example.test/api/v1/hooks/trackers/x/notices"},
+		{"REVIEW_NOTICES_TOKEN", "test-secret"},
+		{"REVIEW_NOTICES_URL", "https://notices.example.test/api/v1/hooks/trackers/x/notices"},
 	} {
 		t.Run(tc.key+tc.value, func(t *testing.T) {
 			m := map[string]string{"DATABASE_URL": base["DATABASE_URL"]}
@@ -44,16 +44,16 @@ func TestLoad(t *testing.T) {
 	}
 }
 
-func TestGardenNotices(t *testing.T) {
+func TestReviewNotices(t *testing.T) {
 	load := func(url string) (Config, error) {
-		m := map[string]string{"DATABASE_URL": "postgres://user:x@localhost/pastime_test", "GARDEN_NOTICES_URL": url, "GARDEN_NOTICES_TOKEN": "bgtrk_test-secret"}
+		m := map[string]string{"DATABASE_URL": "postgres://user:x@localhost/pastime_test", "REVIEW_NOTICES_URL": url, "REVIEW_NOTICES_TOKEN": "bgtrk_test-secret"}
 		return Load(func(k string) string { return m[k] })
 	}
-	c, err := load("https://garden.example.test/api/v1/hooks/trackers/x/notices")
-	if err != nil || c.GardenNoticesURL == "" || c.GardenNoticesToken != "bgtrk_test-secret" {
+	c, err := load("https://notices.example.test/api/v1/hooks/trackers/x/notices")
+	if err != nil || c.ReviewNoticesURL == "" || c.ReviewNoticesToken != "bgtrk_test-secret" {
 		t.Fatalf("%+v %v", c, err)
 	}
-	for _, bad := range []string{"http://garden.example.test/notices", "https://user:test-secret@garden.example.test/notices", "https://garden.example.test/notices?x=1", "garden"} {
+	for _, bad := range []string{"http://notices.example.test/notices", "https://user:test-secret@notices.example.test/notices", "https://notices.example.test/notices?x=1", "notices"} {
 		if _, err := load(bad); err == nil || strings.Contains(err.Error(), "test-secret") {
 			t.Errorf("%q: %v", bad, err)
 		}

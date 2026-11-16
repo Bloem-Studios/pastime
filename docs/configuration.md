@@ -48,6 +48,15 @@ Open Library, AniList, MangaBaka, the Grand Comics Database, YouTube (oEmbed), M
 
 See [September capabilities](september-capabilities.md) for Mylar3, WeTrakr, Navidrome, quota behavior and connection health.
 
+## Year in Review notices
+
+| Variable | Purpose |
+| --- | --- |
+| `REVIEW_NOTICES_URL` | Optional https address of the customer-notice service. Once a year, from 27 December, the worker sends it each customer's Year in Review summary (year, minutes and number of titles) so it can email them. Pastime stores no email addresses |
+| `REVIEW_NOTICES_TOKEN` | Bearer token for that service |
+
+Set both or neither. The address must be https and carry no credentials or query string; startup fails otherwise. Without them no notices are sent.
+
 ## Household and native Bloem tracking
 
 Profile selection and native enrollment authority are database-backed, not environment-variable API keys. See [managed tracking](managed-tracking.md). Native provisioning credentials are backend-only and distinct from personal sessions/tokens. Configuring ordinary Silo/Bloem service adapters does not enable automatic managed enrollment.

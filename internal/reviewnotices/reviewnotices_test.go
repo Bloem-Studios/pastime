@@ -68,16 +68,16 @@ func TestPostMapsTheCustomerSystemsAnswers(t *testing.T) {
 	}
 }
 
-// fakeGarden records each notice and answers with the queued status, or the
+// fakeNotices records each notice and answers with the queued status, or the
 // code set in fail.
-type fakeGarden struct {
+type fakeNotices struct {
 	mu      sync.Mutex
 	notices []map[string]any
 	auth    []string
 	fail    int
 }
 
-func (g *fakeGarden) ServeHTTP(w http.ResponseWriter, r *http.Request) {
+func (g *fakeNotices) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 	g.mu.Lock()
 	defer g.mu.Unlock()
 	var body map[string]any
@@ -121,8 +121,8 @@ func TestRunSendsEachCustomersYearOnceAndRetriesTemporaryFailures(t *testing.T) 
 	for _, at := range []time.Time{time.Date(2026, 3, 1, 20, 0, 0, 0, time.UTC), time.Date(2026, 7, 1, 20, 0, 0, 0, time.UTC), time.Date(2025, 7, 1, 20, 0, 0, 0, time.UTC)} {
 		exec(`INSERT INTO plays(profile_id,entry_id,catalog_item_id,cycle,played_at,source) VALUES($1,$2,$3,1,$4,'manual')`, f.Owner.TrackingID(), entry, film, at)
 	}
-	garden := &fakeGarden{}
-	srv := httptest.NewServer(garden)
+	notices := &fakeNotices{}
+	srv := httptest.NewServer(notices)
 	defer srv.Close()
 	sender := reviewnotices.Sender{Pool: f.Pool, URL: srv.URL, Token: "bgtrk_test", Client: srv.Client()}
 
@@ -130,19 +130,19 @@ func TestRunSendsEachCustomersYearOnceAndRetriesTemporaryFailures(t *testing.T) 
 	if err != nil || len(summaries) != 1 || summaries[0].Subject != subject || summaries[0].Minutes != 200 || summaries[0].Titles != 1 {
 		t.Fatalf("summaries %+v %v", summaries, err)
 	}
-	if res, err := sender.Run(ctx, time.Date(2026, 12, 20, 12, 0, 0, 0, time.UTC), 10); err != nil || len(res) != 0 || len(garden.notices) != 0 {
-		t.Fatalf("before 27 December: %v %v %d", res, err, len(garden.notices))
+	if res, err := sender.Run(ctx, time.Date(2026, 12, 20, 12, 0, 0, 0, time.UTC), 10); err != nil || len(res) != 0 || len(notices.notices) != 0 {
+		t.Fatalf("before 27 December: %v %v %d", res, err, len(notices.notices))
 	}
 	checked, err := sender.Check(ctx, 2026)
-	if err != nil || checked["would_send"] != 1 || garden.notices[0]["dry_run"] != true {
-		t.Fatalf("check %v %v %+v", checked, err, garden.notices)
+	if err != nil || checked["would_send"] != 1 || notices.notices[0]["dry_run"] != true {
+		t.Fatalf("check %v %v %+v", checked, err, notices.notices)
 	}
 	var rows int
 	if err := f.Pool.QueryRow(ctx, `SELECT count(*) FROM review_notices`).Scan(&rows); err != nil || rows != 0 {
 		t.Fatalf("a check recorded %d rows", rows)
 	}
 
-	garden.fail = http.StatusServiceUnavailable
+	notices.fail = http.StatusServiceUnavailable
 	due := time.Date(2026, 12, 27, 10, 0, 0, 0, time.UTC)
 	if res, err := sender.Run(ctx, due, 10); err != nil || res["pending"] != 1 {
 		t.Fatalf("temporary failure %v %v", res, err)
@@ -155,21 +155,21 @@ func TestRunSendsEachCustomersYearOnceAndRetriesTemporaryFailures(t *testing.T) 
 		t.Fatalf("after a failure: %s %d %v %v", status, attempts, next, err)
 	}
 	exec(`UPDATE review_notices SET next_attempt_at=NULL`)
-	garden.fail = 0
+	notices.fail = 0
 	if res, err := sender.Run(ctx, due, 10); err != nil || res["sent"] != 1 {
 		t.Fatalf("send %v %v", res, err)
 	}
 	if res, err := sender.Run(ctx, due.Add(time.Hour), 10); err != nil || len(res) != 0 {
 		t.Fatalf("second pass sent again: %v %v", res, err)
 	}
-	last := garden.notices[len(garden.notices)-1]
-	if len(garden.notices) != 3 || last["kind"] != "year_in_review" || last["subject"] != subject || last["year"] != 2026.0 ||
-		last["minutes"] != 200.0 || last["titles"] != 1.0 || last["dry_run"] != nil || garden.auth[2] != "Bearer bgtrk_test" {
-		t.Fatalf("notices %+v auth %v", garden.notices, garden.auth)
+	last := notices.notices[len(notices.notices)-1]
+	if len(notices.notices) != 3 || last["kind"] != "year_in_review" || last["subject"] != subject || last["year"] != 2026.0 ||
+		last["minutes"] != 200.0 || last["titles"] != 1.0 || last["dry_run"] != nil || notices.auth[2] != "Bearer bgtrk_test" {
+		t.Fatalf("notices %+v auth %v", notices.notices, notices.auth)
 	}
 
 	exec(`DELETE FROM review_notices`)
-	garden.fail = http.StatusUnauthorized
+	notices.fail = http.StatusUnauthorized
 	if _, err := sender.Run(ctx, due, 10); !errors.Is(err, reviewnotices.ErrUnauthorized) {
 		t.Fatalf("a refused token = %v", err)
 	}

@@ -1,5 +1,5 @@
--- Year in Review notices: once a year Pastime tells the customer system (Garden)
--- how each customer's year went, and Garden emails them. One row per account and
+-- Year in Review notices: once a year Pastime tells the customer-notice service
+-- how each customer's year went, and it emails them. One row per account and
 -- year keeps the numbers that were sent, so a retry sends the same ones, and
 -- records what happened.
 -- +goose Up

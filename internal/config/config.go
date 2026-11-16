@@ -40,9 +40,9 @@ type Config struct {
 	ServicesPrivate bool
 	// SiloSyncRequestsPerMinute limits each Silo sync credential (ptbs_) on its own.
 	SiloSyncRequestsPerMinute int
-	// GardenNoticesURL and GardenNoticesToken let the worker ask the customer system
-	// (Bloem Garden) to email each customer their Year in Review. Both or neither.
-	GardenNoticesURL, GardenNoticesToken string
+	// ReviewNoticesURL and ReviewNoticesToken let the worker ask the customer system
+	// (the customer-notice service) to email each customer their Year in Review. Both or neither.
+	ReviewNoticesURL, ReviewNoticesToken string
 }
 
 func Load(getenv func(string) string) (Config, error) {
@@ -112,14 +112,14 @@ func Load(getenv func(string) string) (Config, error) {
 		// leave it empty; serve refuses to start without an explicit PUBLIC_ORIGIN.
 		c.PublicOrigin = defaultOrigin(c.ListenAddr)
 	}
-	c.GardenNoticesURL, c.GardenNoticesToken = getenv("GARDEN_NOTICES_URL"), getenv("GARDEN_NOTICES_TOKEN")
-	if (c.GardenNoticesURL == "") != (c.GardenNoticesToken == "") {
-		return Config{}, errors.New("set both GARDEN_NOTICES_URL and GARDEN_NOTICES_TOKEN, or neither")
+	c.ReviewNoticesURL, c.ReviewNoticesToken = getenv("REVIEW_NOTICES_URL"), getenv("REVIEW_NOTICES_TOKEN")
+	if (c.ReviewNoticesURL == "") != (c.ReviewNoticesToken == "") {
+		return Config{}, errors.New("set both REVIEW_NOTICES_URL and REVIEW_NOTICES_TOKEN, or neither")
 	}
-	if c.GardenNoticesURL != "" {
-		u, err := url.Parse(c.GardenNoticesURL)
+	if c.ReviewNoticesURL != "" {
+		u, err := url.Parse(c.ReviewNoticesURL)
 		if err != nil || u == nil || u.Scheme != "https" || u.Hostname() == "" || u.User != nil || u.RawQuery != "" || u.Fragment != "" {
-			return Config{}, errors.New("GARDEN_NOTICES_URL must be an https URL without credentials or query")
+			return Config{}, errors.New("REVIEW_NOTICES_URL must be an https URL without credentials or query")
 		}
 	}
 	if c.WorkerCount > int(c.DatabaseMaxConn)-1 {
